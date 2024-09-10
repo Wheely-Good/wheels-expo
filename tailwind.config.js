@@ -4,7 +4,7 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 module.exports = {
   // NOTE: Update this to include the paths to all of your component files.
   darkMode: ["class"],
-  content: ["./app/**/*.{js,jsx,ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: ["./app/**/*.{js,jsx,ts,tsx}", "components/**/*.{ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
     container: {
