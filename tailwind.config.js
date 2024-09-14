@@ -16,6 +16,12 @@ module.exports = {
     },
     extend: {
       colors: {
+        indigo: {
+          600: '#6366f1',
+        },
+        yellow: {
+          400: '#FFD700',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
