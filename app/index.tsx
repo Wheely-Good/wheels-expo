@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, NativeSyntheticEvent, NativeScrollEvent } from 'react-native';
 import { useRouter } from 'expo-router';
 import { ArrowRight, Mic, Book, BarChart, Users, Play } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -54,19 +54,30 @@ function Header({ isScrolled, scrollToSection }: HeaderProps): JSX.Element {
 export default function LandingPage(): JSX.Element {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const scrollViewRef = useRef<ScrollView>(null);
+  const sectionRefs = useRef<{ [key: string]: View | null }>({});
   const router = useRouter();
 
   const scrollToSection = (sectionId: string) => {
-    // Implement scrolling logic here
+    if (scrollViewRef.current && sectionRefs.current[sectionId]) {
+      sectionRefs.current[sectionId]?.measureLayout(
+        scrollViewRef.current as unknown as number,
+        (_, y) => {
+          scrollViewRef.current?.scrollTo({ x: 0, y: y, animated: true });
+        },
+        () => console.log('Failed to measure')
+      );
+    }
+  };
+
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    setIsScrolled(event.nativeEvent.contentOffset.y > 50);
   };
 
   return (
     <ScrollView 
       ref={scrollViewRef} 
       className="flex-1 bg-white"
-      onScroll={({nativeEvent}) => {
-        setIsScrolled(nativeEvent.contentOffset.y > 50);
-      }}
+      onScroll={handleScroll}
       scrollEventThrottle={16}
     >
       <LinearGradient
@@ -105,7 +116,7 @@ export default function LandingPage(): JSX.Element {
       </LinearGradient>
 
       {/* Features Section */}
-      <View className="py-16 px-4" id="features">
+      <View ref={(ref) => sectionRefs.current['features'] = ref} className="py-16 px-4" id="features">
         <View className="max-w-7xl mx-auto">
           <Text className="text-3xl font-extrabold text-gray-900 text-center mb-12">
             Why Choose Wheels for IELTS Speaking?
@@ -136,7 +147,7 @@ export default function LandingPage(): JSX.Element {
       </View>
 
       {/* Experience a lesson */}
-      <View className="bg-gray-100 py-16 px-4" id="demo">
+      <View ref={(ref) => sectionRefs.current['demo'] = ref} className="bg-gray-100 py-16 px-4" id="demo">
         <View className="max-w-7xl mx-auto">
           <Text className="text-3xl font-extrabold text-gray-900 text-center mb-12">
             Experience an IELTS Speaking Lesson
@@ -167,7 +178,7 @@ export default function LandingPage(): JSX.Element {
       </View>
 
       {/* Pricing Section */}
-      <View className="bg-white py-16 px-4" id="pricing">
+      <View ref={(ref) => sectionRefs.current['pricing'] = ref} className="bg-white py-16 px-4" id="pricing">
         <View className="max-w-7xl mx-auto">
           <Text className="text-3xl font-extrabold text-gray-900 text-center mb-12">
             Choose Your Plan
@@ -212,44 +223,25 @@ export default function LandingPage(): JSX.Element {
         <View className="max-w-7xl mx-auto text-center">
           <Text className="text-3xl text-white font-extrabold mb-8">Ready to Boost Your IELTS Speaking Score?</Text>
           <TouchableOpacity 
-            className="bg-white px-8 py-3 rounded-md inline-flex items-center"
+            className="bg-white px-8 py-3 rounded-md inline-flex flex-row justify-center items-center"
             onPress={() => router.push('/signup')}
           >
             <Text className="text-blue-600 text-lg font-medium">Get Started Now</Text>
-            <ArrowRight className="ml-2 h-5 w-5 text-blue-600" />
+            <ArrowRight className="ml-2 h-5 w-5 text-blue-600 inline" />
           </TouchableOpacity>
         </View>
       </View>
 
       {/* Footer */}
     
-      <View className="bg-blue-800 text-white py-8 px-4">
-        <View className="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
-          <View className="w-full md:w-1/3 text-center md:text-left mb-4 md:mb-0">
-            <View className="flex flex-row items-center justify-center md:justify-start">
-              <Mic className="h-8 w-8 mr-2 text-white" />
-              <Text className="text-2xl font-bold">Wheels</Text>
-            </View>
-            <Text className="mt-2 text-sm">Accelerate your IELTS speaking skills</Text>
-          </View>
-          <View className="w-full md:w-1/3 text-center mb-4 md:mb-0">
-            <View className="space-x-4">
-              <TouchableOpacity onPress={() => router.push('/privacy')}>
-                <Text className="text-white hover:text-yellow-400 transition duration-300">Privacy Policy</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => router.push('/terms')}>
-                <Text className="text-white hover:text-yellow-400 transition duration-300">Terms of Service</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={() => router.push('/contact')}>
-                <Text className="text-white hover:text-yellow-400 transition duration-300">Contact Us</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View className="w-full md:w-1/3 text-center md:text-right">
-            <Text>&copy; 2023 Wheels. All rights reserved.</Text>
-          </View>
-        </View>
+    <View className="bg-blue-900 p-4">
+      <View className="items-end">
+
+        <Text className="text-white text-sm">
+          © 2023 Wheels. All rights reserved.
+        </Text>
       </View>
+    </View>
 
 
     </ScrollView>
