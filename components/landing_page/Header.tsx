@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import { Link } from 'expo-router';
 import { Mic } from 'lucide-react-native';
 
 interface HeaderProps {
@@ -9,8 +9,6 @@ interface HeaderProps {
 }
 
 export default function Header({ isScrolled, scrollToSection }: HeaderProps): JSX.Element {
-  const router = useRouter();
-
   return (
     <View className={`z-50 transition-all duration-300 ${isScrolled ? 'bg-indigo-600' : 'bg-transparent'}`}>
       <View className="flex-row justify-between items-center px-4 py-4">
@@ -31,15 +29,12 @@ export default function Header({ isScrolled, scrollToSection }: HeaderProps): JS
 
         {/* Auth Buttons */}
         <View className="flex-row items-center space-x-4">
-          <TouchableOpacity onPress={() => router.push('/login')}>
+        <Link href="/sign-in">
             <Text className="text-white">Log in</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            className="bg-white px-4 py-2 rounded-full"
-            onPress={() => router.push('/signup')}
-          >
+        </Link>
+        <Link href="/sign-up" className="bg-white px-4 py-2 rounded-full">
             <Text className="text-indigo-600 font-semibold">Sign up</Text>
-          </TouchableOpacity>
+        </Link>
         </View>
       </View>
     </View>
