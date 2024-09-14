@@ -73,6 +73,8 @@ export default function LandingPage(): JSX.Element {
     setIsScrolled(event.nativeEvent.contentOffset.y > 50);
   };
 
+  const currentYear = new Date().getFullYear()
+
   return (
     <ScrollView 
       ref={scrollViewRef} 
@@ -240,7 +242,7 @@ export default function LandingPage(): JSX.Element {
       <View className="items-end">
 
         <Text className="text-white text-sm">
-          © 2023 Wheels. All rights reserved.
+          © {currentYear} Wheels. All rights reserved.
         </Text>
       </View>
     </View>
