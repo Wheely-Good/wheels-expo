@@ -160,11 +160,13 @@ export default function LandingPage(): JSX.Element {
                 <View className="flex-row items-start">
                   <Mic className="h-6 w-6 text-blue-600" />
                   <Text className="ml-3 text-gray-700">
-                    "Describe a memorable journey you have taken. You should say:
-                    {"\n"}• Where you went
-                    {"\n"}• Who you went with
-                    {"\n"}• What you did during the journey
-                    {"\n"}• And explain why it was memorable for you"
+                    <Text className='font-bold'>Describe a memorable journey you have taken. You should say:</Text>
+                    {"\n"}
+                    {"\n"}  • Where you went
+                    {"\n"}  • Who you went with
+                    {"\n"}  • What you did during the journey
+                    {"\n"}
+                    {"\n"}And explain why it was memorable for you.
                   </Text>
                 </View>
                 <TouchableOpacity className="flex-row items-center justify-center w-full bg-blue-600 px-4 py-2 rounded-md">
