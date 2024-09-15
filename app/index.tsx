@@ -4,6 +4,9 @@ import { useRouter } from 'expo-router';
 import { ArrowRight, Mic, Book, BarChart, Users, Play } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import PricingCard from '@/components/PricingCard';
+import FeatureCard from '@/components/FeatureCard';
+
 interface HeaderProps {
   isScrolled: boolean;
   scrollToSection: (sectionId: string) => void;
@@ -249,52 +252,5 @@ export default function LandingPage(): JSX.Element {
 
 
     </ScrollView>
-  );
-}
-
-interface FeatureCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-function FeatureCard({ icon, title, description }: FeatureCardProps): JSX.Element {
-  return (
-    <View className="bg-white p-6 rounded-lg shadow-md w-[48%] mb-8">
-      <View className="flex flex-row justify-center mb-4">
-        {icon}
-      </View>
-      <Text className="text-lg font-semibold text-gray-900 mb-2 text-center">{title}</Text>
-      <Text className="text-gray-600 text-center">{description}</Text>
-    </View>
-  );
-}
-
-interface PricingCardProps {
-  title: string;
-  price: string;
-  features: string[];
-  highlighted?: boolean;
-}
-
-function PricingCard({ title, price, features, highlighted = false }: PricingCardProps): JSX.Element {
-  return (
-    <View className={`bg-white p-6 rounded-lg shadow-md ${highlighted ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}>
-      <Text className="text-2xl font-bold text-gray-900 mb-4">{title}</Text>
-      <Text className="text-4xl font-extrabold text-blue-600 mb-6">
-        {price}<Text className="text-lg font-normal text-gray-500">/month</Text>
-      </Text>
-      <View className="space-y-3 mb-6">
-        {features.map((feature, index) => (
-          <View key={index} className="flex-row items-center">
-            <ArrowRight className="h-5 w-5 text-green-500 mr-2" />
-            <Text>{feature}</Text>
-          </View>
-        ))}
-      </View>
-      <TouchableOpacity className={`w-full py-2 px-4 rounded-md ${highlighted ? 'bg-blue-600' : 'bg-gray-200'}`}>
-        <Text className={`text-center font-medium ${highlighted ? 'text-white' : 'text-gray-800'}`}>Choose Plan</Text>
-      </TouchableOpacity>
-    </View>
   );
 }
