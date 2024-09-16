@@ -4,8 +4,8 @@ import { useRouter } from 'expo-router';
 import { ArrowRight, Mic, Book, BarChart, Users, Play } from 'lucide-react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import PricingCard from '@/components/PricingCard';
-import FeatureCard from '@/components/FeatureCard';
+import PricingCard from '@/components/landing_page/PricingCard';
+import FeatureCard from '@/components/landing_page/FeatureCard';
 
 interface HeaderProps {
   isScrolled: boolean;
