@@ -12,7 +12,7 @@ export default function CallToAction(): JSX.Element {
         <Text className="text-3xl text-white font-extrabold mb-8">Ready to Boost Your IELTS Speaking Score?</Text>
         <TouchableOpacity
           className="bg-white px-8 py-3 rounded-md inline-flex flex-row justify-center items-center"
-          onPress={() => router.push('/signup')}
+          onPress={() => router.push('/sign-up')}
         >
           <Text className="text-blue-600 text-lg font-medium">Get Started Now</Text>
           <ArrowRight className="ml-2 h-5 w-5 text-blue-600 inline" />

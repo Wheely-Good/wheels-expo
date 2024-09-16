@@ -21,7 +21,7 @@ export default function Hero({ scrollToSection }: HeroProps): JSX.Element {
       <View className="flex-row justify-center space-x-4">
         <TouchableOpacity
           className="bg-white px-6 py-3 rounded-full flex-row items-center"
-          onPress={() => router.push('/signup')}
+          onPress={() => router.push('/sign-up')}
         >
           <Text className="text-indigo-600 font-medium">Start Free Trial</Text>
           <ArrowRight className="ml-2 h-5 w-5 text-indigo-600" />
