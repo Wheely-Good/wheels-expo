@@ -31,8 +31,6 @@ export default function LandingPage(): JSX.Element {
     setIsScrolled(event.nativeEvent.contentOffset.y > 50);
   };
 
-  const currentYear = new Date().getFullYear()
-
   return (
     <ScrollView
       ref={scrollViewRef}
