@@ -1,7 +1,26 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { useRouter } from 'expo-router';
+import Loading from '@/components/Loading';
+import { useAuthStore } from '@/hooks/useAuthStore';
 
 export default function AccountPage() {
+  const router = useRouter();
+  const { isLoading, signOut } = useAuthStore((state) => ({
+    isLoading: state.isLoading,
+    signOut: state.signOut
+  }));
+
+
+  if (isLoading) {
+    return <Loading />
+  }
+
+  const handleSignOut = async () => {
+    await signOut();
+    router.replace('/sign-in');
+  }
+
   return (
     <View className="flex-1 p-6">
       <Text className="text-3xl font-bold text-blue-600 mb-6">Account Settings</Text>
@@ -31,6 +50,12 @@ export default function AccountPage() {
         </View>
         <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2 mt-4">
           <Text className="text-white text-center">Save Changes</Text>
+        </TouchableOpacity>
+        <TouchableOpacity 
+          onPress={handleSignOut}
+          className="rounded-md bg-red-500 px-4 py-2 mt-4"
+        >
+          <Text className="text-white text-center">Sign Out</Text>
         </TouchableOpacity>
       </View>
     </View>
