@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Stack, Redirect } from 'expo-router';
+import { Slot, Redirect } from 'expo-router';
 import DesktopNavigation from '@/components/DesktopNavigation';
 import MobileNavigation from '@/components/MobileNavigation';
 import { useAuthStore } from '@/hooks/useAuthStore';
@@ -24,7 +24,7 @@ export default function MainLayout() {
     <View className="flex flex-col h-screen bg-gray-50">
       <DesktopNavigation />
       <View className="lg:ml-16 flex-1 flex flex-col">
-        <Stack screenOptions={{ headerShown: false }} />
+        <Slot screenOptions={{ headerShown: false }} />
       </View>
       <MobileNavigation />
     </View>
