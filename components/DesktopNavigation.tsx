@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Link } from 'expo-router';
-import { Book, TestTube2, User, Bike, Dumbbell } from 'lucide-react';
+import { Book, TestTube2, User, Bike, Dumbbell } from 'lucide-react-native';
 
 export default function DesktopNavigation() {
   return (
