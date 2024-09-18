@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useRouter, useSegments } from 'expo-router';
-import { View, ActivityIndicator } from 'react-native';
-import LandingPage from './LandingPage';
-import { useAuthStore } from '@/hooks/useAuthStore'; // Adjust the import path as needed
+import React, { useEffect } from "react";
+import { useRouter, useSegments } from "expo-router";
+import { View, ActivityIndicator } from "react-native";
+import LandingPage from "./LandingPage";
+import { useAuthStore } from "@/hooks/useAuthStore"; // Adjust the import path as needed
 
 export default function RootLayoutAuth() {
   const router = useRouter();
@@ -15,8 +15,7 @@ export default function RootLayoutAuth() {
 
   useEffect(() => {
     initialize();
-
-  }, [initialize]);
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
@@ -24,7 +23,7 @@ export default function RootLayoutAuth() {
         router.replace('/(auth)');
       }
     }
-  }, [session, isLoading, router, segments]);
+  }, [session, isLoading, router]);
 
   if (isLoading) {
     return (
