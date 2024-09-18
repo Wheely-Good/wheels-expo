@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { supabase } from '@/lib/supabase';
-import { Session } from "@supabase/supabase-js"
+import { Session } from "@supabase/supabase-js";
 
 interface AuthState {
   session: Session | null;
@@ -36,11 +36,20 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       set({ isLoading: true, error: null });
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) throw error;
+      if (error) {
+        console.log("Signin error:", error.message)
+        let errorMessage = 'Failed to sign in';
+        if (error.message.includes('Invalid login credentials')) {
+          errorMessage = 'Invalid email or password. Please try again.';
+        } else if (error.message.includes('Email not confirmed')) {
+          errorMessage = 'Please verify your email address before signing in.';
+        }
+        throw new Error(errorMessage);
+      }
       set({ session: data.session, isLoading: false });
     } catch (error) {
       console.error('Error signing in:', error);
-      set({ isLoading: false, error: 'Failed to sign in' });
+      set({ isLoading: false, error: (error as Error).message });
     }
   },
 
