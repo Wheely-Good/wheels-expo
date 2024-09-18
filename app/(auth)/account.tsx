@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import Loading from '@/components/Loading';
 import { useAuthStore } from '@/hooks/useAuthStore';
@@ -11,53 +11,56 @@ export default function AccountPage() {
     signOut: state.signOut
   }));
 
-
   if (isLoading) {
-    return <Loading />
+    return <Loading />;
   }
 
   const handleSignOut = async () => {
     await signOut();
     router.replace('/sign-in');
-  }
+  };
 
   return (
-    <View className="flex-1 p-6">
-      <Text className="text-3xl font-bold text-blue-600 mb-6">Account Settings</Text>
-      <View className="space-y-4">
-        <View className="space-y-2">
-          <Text className="text-sm font-medium text-gray-700">Name</Text>
-          <TextInput
-            placeholder="Your name"
-            className="w-full rounded-md border border-gray-300 px-3 py-2"
-          />
+    <ScrollView className="flex-1 bg-gray-100">
+      <View className="flex-1 items-center justify-center p-6 min-h-screen">
+        <View className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+          <Text className="text-2xl font-bold text-blue-600 mb-6 text-center">Account Settings</Text>
+          <View className="space-y-4">
+            <View className="space-y-2">
+              <Text className="text-sm font-medium text-gray-700">Name</Text>
+              <TextInput
+                placeholder="Your name"
+                className="w-full rounded-md border border-gray-300 px-3 py-2"
+              />
+            </View>
+            <View className="space-y-2">
+              <Text className="text-sm font-medium text-gray-700">Email</Text>
+              <TextInput
+                placeholder="Your email"
+                className="w-full rounded-md border border-gray-300 px-3 py-2"
+                keyboardType="email-address"
+              />
+            </View>
+            <View className="space-y-2">
+              <Text className="text-sm font-medium text-gray-700">New Password</Text>
+              <TextInput
+                placeholder="New password"
+                className="w-full rounded-md border border-gray-300 px-3 py-2"
+                secureTextEntry
+              />
+            </View>
+            <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2 mt-4">
+              <Text className="text-white text-center">Save Changes</Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              onPress={handleSignOut}
+              className="rounded-md bg-red-500 px-4 py-2 mt-4"
+            >
+              <Text className="text-white text-center">Sign Out</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View className="space-y-2">
-          <Text className="text-sm font-medium text-gray-700">Email</Text>
-          <TextInput
-            placeholder="Your email"
-            className="w-full rounded-md border border-gray-300 px-3 py-2"
-            keyboardType="email-address"
-          />
-        </View>
-        <View className="space-y-2">
-          <Text className="text-sm font-medium text-gray-700">New Password</Text>
-          <TextInput
-            placeholder="New password"
-            className="w-full rounded-md border border-gray-300 px-3 py-2"
-            secureTextEntry
-          />
-        </View>
-        <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2 mt-4">
-          <Text className="text-white text-center">Save Changes</Text>
-        </TouchableOpacity>
-        <TouchableOpacity 
-          onPress={handleSignOut}
-          className="rounded-md bg-red-500 px-4 py-2 mt-4"
-        >
-          <Text className="text-white text-center">Sign Out</Text>
-        </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 }
