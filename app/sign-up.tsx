@@ -9,6 +9,7 @@ export default function SignUpPage() {
   const router = useRouter();
   const { signUp, isLoading, error } = useAuthStore();
   const [passwordMismatch, setPasswordMismatch] = useState(false);
+  const [signUpMessage, setSignUpMessage] = useState<string>('');
 
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
@@ -24,9 +25,15 @@ export default function SignUpPage() {
       return;
     }
 
-    await signUp(data.email, data.password);
-    if (!error) {
-      router.replace('/(auth)');
+    try {
+      const message = await signUp(data.email, data.password);
+      // Handle the message if it's defined
+      if (message) {
+        setSignUpMessage(message);
+      }
+    } catch (error) {
+      // Handle any sign-up errors here
+      console.error('Sign-up error:', error);
     }
   };
 
@@ -92,19 +99,31 @@ export default function SignUpPage() {
           <Text className="text-red-500 mb-2 text-center">Passwords do not match</Text>
         )}
 
-        <TouchableOpacity
-          className="w-full bg-blue-500 p-2 rounded"
-          onPress={handleSubmit(onSubmit)}
-          disabled={isLoading}
-        >
-          <Text className="text-white text-center">
-            {isLoading ? 'Signing up...' : 'Sign Up'}
-          </Text>
-        </TouchableOpacity>
+        {signUpMessage ? (
+          <View className="mb-4">
+            <Text className="text-blue-500 font-bold font-lg text-center mb-2">{signUpMessage}</Text>
+            <TouchableOpacity
+              className="w-full bg-blue-500 p-2 rounded"
+              onPress={() => router.replace('/sign-in')}
+            >
+              <Text className="text-white text-center">Go to Sign In</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <TouchableOpacity
+            className="w-full bg-blue-500 p-2 rounded"
+            onPress={handleSubmit(onSubmit)}
+            disabled={isLoading}
+          >
+            <Text className="text-white text-center">
+              {isLoading ? 'Signing up...' : 'Sign Up'}
+            </Text>
+          </TouchableOpacity>
+        )}
+
         {error && <Text className="text-red-500 mt-2 text-center">{error}</Text>}
       </View>
     </View>
     </LinearGradient>
-
   );
 }

@@ -8,7 +8,7 @@ interface AuthState {
   error: string | null;
   initialize: () => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<string | undefined>;
   signOut: () => Promise<void>;
 }
 
@@ -58,10 +58,12 @@ export const useAuthStore = create<AuthState>((set) => ({
       set({ isLoading: true, error: null });
       const { data, error } = await supabase.auth.signUp({ email, password });
       if (error) throw error;
-      set({ session: data.session, isLoading: false });
+      set({ isLoading: false, error: null });
+      return 'Please check your email to verify your account.';
     } catch (error) {
       console.error('Error signing up:', error);
       set({ isLoading: false, error: 'Failed to sign up' });
+      throw error;
     }
   },
 
