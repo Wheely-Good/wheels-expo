@@ -1,10 +1,10 @@
-import React from 'react';
-import { View } from 'react-native';
-import { Stack, Redirect } from 'expo-router';
-import DesktopNavigation from '@/components/DesktopNavigation';
-import MobileNavigation from '@/components/MobileNavigation';
-import { useAuthStore } from '@/hooks/useAuthStore';
-import Loading from '@/components/Loading';
+import React, { useEffect } from "react";
+import { View } from "react-native";
+import { Stack, Redirect, useRouter } from "expo-router";
+import DesktopNavigation from "@/components/DesktopNavigation";
+import MobileNavigation from "@/components/MobileNavigation";
+import { useAuthStore } from "@/hooks/useAuthStore";
+import Loading from "@/components/Loading";
 
 export default function MainLayout() {
   const { session, isLoading } = useAuthStore((state) => ({
@@ -12,12 +12,12 @@ export default function MainLayout() {
     isLoading: state.isLoading,
   }));
 
-  if (!session) {
-    return <Redirect href="/sign-in" />
+  if (isLoading) {
+    return <Loading />;
   }
 
-  if (isLoading) {
-    return <Loading />
+  if(!session) {
+    return <Redirect href="/sign-in" /> 
   }
 
   return (
