@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import { Pressable, Text } from 'react-native';
+import React, { useRef } from 'react';
+import { Pressable, Animated } from 'react-native';
 
 interface CustomPressableProps {
   onPress: () => void | Promise<void>;
   disabled?: boolean;
   children: React.ReactNode;
   className?: string;
+  activeOpacity?: number;
+  fadeInDuration?: number;
+  fadeOutDuration?: number;
 }
 
 const CustomPressable: React.FC<CustomPressableProps> = ({
@@ -13,19 +16,32 @@ const CustomPressable: React.FC<CustomPressableProps> = ({
   children,
   disabled = false,
   className = '',
+  activeOpacity = 0.2,
+  fadeInDuration = 0,
+  fadeOutDuration = 200,
 }) => {
-  const [isPressed, setIsPressed] = useState(false);
+  const opacityAnim = useRef(new Animated.Value(1)).current;
+
+  const animateOpacity = (toValue: number, duration: number) => {
+    Animated.timing(opacityAnim, {
+      toValue,
+      duration,
+      useNativeDriver: true,
+    }).start();
+  };
 
   return (
-    <Pressable
-      disabled={disabled}
-      onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
-      onPress={onPress}
-      className={`${className} ${disabled ? 'opacity-50' : isPressed ? 'opacity-50' : 'opacity-100'}`}
-    >
-      {children}
-    </Pressable>
+    <Animated.View style={{ opacity: disabled ? activeOpacity : opacityAnim }}>
+      <Pressable
+        disabled={disabled}
+        onPressIn={() => !disabled && animateOpacity(activeOpacity, fadeInDuration)}
+        onPressOut={() => !disabled && animateOpacity(1, fadeOutDuration)}
+        onPress={onPress}
+        className={`${className} ${disabled ? 'opacity-50' : ''}`}
+      >
+        {children}
+      </Pressable>
+    </Animated.View>
   );
 };
 
