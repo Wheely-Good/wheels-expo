@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { useRouter } from 'expo-router';
 import { ArrowRight, Play } from 'lucide-react-native';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 interface HeroProps {
   scrollToSection: (sectionId: string) => void;
@@ -19,20 +20,20 @@ export default function Hero({ scrollToSection }: HeroProps): JSX.Element {
         Accelerate your English speaking skills and ace your IELTS test with our interactive platform
       </Text>
       <View className="flex-row justify-center space-x-4">
-        <TouchableOpacity
+        <CustomPressable
           className="bg-white px-6 py-3 rounded-full flex-row items-center"
           onPress={() => router.push('/sign-up')}
         >
           <Text className="text-indigo-600 font-medium">Start Free Trial</Text>
           <ArrowRight className="ml-2 h-5 w-5 text-indigo-600" />
-        </TouchableOpacity>
-        <TouchableOpacity
+        </CustomPressable>
+        <CustomPressable
           className="border-2 border-white px-6 py-3 rounded-full flex-row items-center"
           onPress={() => scrollToSection('demo')}
         >
           <Text className="text-white font-medium">Learn More</Text>
           <Play className="ml-2 h-5 w-5 text-white" />
-        </TouchableOpacity>
+        </CustomPressable>
       </View>
     </View>
   );

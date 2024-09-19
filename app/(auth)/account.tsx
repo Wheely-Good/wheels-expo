@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, TextInput, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
 import Loading from '@/components/Loading';
 import { useAuthStore } from '@/hooks/useAuthStore';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 export default function AccountPage() {
   const router = useRouter();
@@ -49,15 +50,18 @@ export default function AccountPage() {
                 secureTextEntry
               />
             </View>
-            <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2 mt-4">
+            <CustomPressable
+              onPress={() => {}}
+              className="rounded-md bg-blue-600 px-4 py-2 mt-4"
+            >
               <Text className="text-white text-center">Save Changes</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
+            </CustomPressable>
+            <CustomPressable
               onPress={handleSignOut}
               className="rounded-md bg-red-500 px-4 py-2 mt-4"
             >
               <Text className="text-white text-center">Sign Out</Text>
-            </TouchableOpacity>
+            </CustomPressable>
           </View>
         </View>
       </View>
