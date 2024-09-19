@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useForm, Controller } from 'react-hook-form';
 import { useAuthStore } from '@/hooks/useAuthStore';
@@ -50,12 +50,12 @@ export default function SignUpPage() {
               <Text className="text-blue-500 font-bold font-lg text-center mb-2">
                 {signUpMessage}
               </Text>
-              <Pressable
+              <TouchableOpacity
                 className="w-full bg-blue-500 p-2 rounded"
                 onPress={() => router.replace('/sign-in')}
               >
                 <Text className="text-white text-center">Go to Sign In</Text>
-              </Pressable>
+              </TouchableOpacity>
             </View>
           ) : (
             <>
@@ -115,7 +115,7 @@ export default function SignUpPage() {
                 <Text className="text-red-500 mb-2 text-center">Passwords do not match</Text>
               )}
 
-              <Pressable
+              <TouchableOpacity
                 className="w-full bg-blue-500 p-2 rounded"
                 onPress={handleSubmit(onSubmit)}
                 disabled={isLoading}
@@ -123,7 +123,7 @@ export default function SignUpPage() {
                 <Text className="text-white text-center">
                   {isLoading ? 'Signing up...' : 'Sign Up'}
                 </Text>
-              </Pressable>
+              </TouchableOpacity>
 
               {error && <Text className="text-red-500 mt-2 text-center">{error}</Text>}
             </>
