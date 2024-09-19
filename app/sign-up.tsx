@@ -26,9 +26,9 @@ export default function SignUpPage() {
       return;
     }
 
-    const success = await signUp(data.email, data.password);
+    await signUp(data.email, data.password);
 
-    if (success) {
+    if (!error) {
       setSignUpMessage('Please check your email to verify your account.');
       setSignUpSuccess(true);
     } else {
