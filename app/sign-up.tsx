@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Pressable } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useForm, Controller } from 'react-hook-form';
 import { useAuthStore } from '@/hooks/useAuthStore';
@@ -10,7 +10,7 @@ export default function SignUpPage() {
   const { signUp, isLoading, error } = useAuthStore();
   const [passwordMismatch, setPasswordMismatch] = useState(false);
   const [signUpMessage, setSignUpMessage] = useState<string>('');
-  const [signUpSuccess, setSignUpSuccess] = useState(false); // New state to track successful sign-up
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
 
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
@@ -26,14 +26,14 @@ export default function SignUpPage() {
       return;
     }
 
-    try {
-      const message = await signUp(data.email, data.password);
-      if (message) {
-        setSignUpMessage(message);
-        setSignUpSuccess(true); // Set success state to true on successful sign-up
-      }
-    } catch (error) {
-      console.error('Sign-up error:', error);
+    const success = await signUp(data.email, data.password);
+
+    if (success) {
+      setSignUpMessage('Please check your email to verify your account.');
+      setSignUpSuccess(true);
+    } else {
+      setSignUpMessage('');
+      setSignUpSuccess(false);
     }
   };
 
@@ -48,14 +48,14 @@ export default function SignUpPage() {
             <View>
               <Text className="text-2xl font-bold mb-6 text-center">Check Your Email</Text>
               <Text className="text-blue-500 font-bold font-lg text-center mb-2">
-                {signUpMessage || 'Please check your email to verify your account.'}
+                {signUpMessage}
               </Text>
-              <TouchableOpacity
+              <Pressable
                 className="w-full bg-blue-500 p-2 rounded"
                 onPress={() => router.replace('/sign-in')}
               >
                 <Text className="text-white text-center">Go to Sign In</Text>
-              </TouchableOpacity>
+              </Pressable>
             </View>
           ) : (
             <>
@@ -115,7 +115,7 @@ export default function SignUpPage() {
                 <Text className="text-red-500 mb-2 text-center">Passwords do not match</Text>
               )}
 
-              <TouchableOpacity
+              <Pressable
                 className="w-full bg-blue-500 p-2 rounded"
                 onPress={handleSubmit(onSubmit)}
                 disabled={isLoading}
@@ -123,7 +123,7 @@ export default function SignUpPage() {
                 <Text className="text-white text-center">
                   {isLoading ? 'Signing up...' : 'Sign Up'}
                 </Text>
-              </TouchableOpacity>
+              </Pressable>
 
               {error && <Text className="text-red-500 mt-2 text-center">{error}</Text>}
             </>

@@ -8,7 +8,7 @@ interface AuthState {
   error: string | null;
   initialize: () => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<string | undefined>;
+  signUp: (email: string, password: string) => Promise<boolean>;
   signOut: () => Promise<void>;
 }
 
@@ -21,11 +21,11 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       const { data: { session } } = await supabase.auth.getSession();
       set({ session, isLoading: false });
-  
+
       supabase.auth.onAuthStateChange((_event, session) => {
         set({ session, isLoading: false });
       });
-     
+
     } catch (error) {
       console.error('Error initializing auth:', error);
       set({ session: null, isLoading: false, error: 'Failed to initialize authentication' });
@@ -37,14 +37,7 @@ export const useAuthStore = create<AuthState>((set) => ({
       set({ isLoading: true, error: null });
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) {
-        console.log("Signin error:", error.message)
-        let errorMessage = 'Failed to sign in';
-        if (error.message.includes('Invalid login credentials')) {
-          errorMessage = 'Invalid email or password. Please try again.';
-        } else if (error.message.includes('Email not confirmed')) {
-          errorMessage = 'Please verify your email address before signing in.';
-        }
-        throw new Error(errorMessage);
+        throw new Error(error.message);
       }
       set({ session: data.session, isLoading: false });
     } catch (error) {
@@ -56,14 +49,16 @@ export const useAuthStore = create<AuthState>((set) => ({
   signUp: async (email: string, password: string) => {
     try {
       set({ isLoading: true, error: null });
-      const { data, error } = await supabase.auth.signUp({ email, password });
-      if (error) throw error;
+      const { error } = await supabase.auth.signUp({ email, password });
+      if (error) {
+        throw new Error(error.message);
+      }
       set({ isLoading: false, error: null });
-      return 'Please check your email to verify your account.';
+      return true;
     } catch (error) {
       console.error('Error signing up:', error);
-      set({ isLoading: false, error: 'Failed to sign up' });
-      throw error;
+      set({ isLoading: false, error: (error as Error).message });
+      return false;
     }
   },
 
@@ -71,11 +66,11 @@ export const useAuthStore = create<AuthState>((set) => ({
     try {
       set({ isLoading: true, error: null });
       const { error } = await supabase.auth.signOut();
-      if (error) throw error;
+      if (error) throw new Error(error.message);
       set({ session: null, isLoading: false });
     } catch (error) {
       console.error('Error signing out:', error);
-      set({ isLoading: false, error: 'Failed to sign out' });
+      set({ isLoading: false, error: (error as Error).message });
     }
   },
 }));
