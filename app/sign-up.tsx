@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Pressable } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useForm, Controller } from 'react-hook-form';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { LinearGradient } from 'expo-linear-gradient';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -50,12 +51,12 @@ export default function SignUpPage() {
               <Text className="text-blue-500 font-bold font-lg text-center mb-2">
                 {signUpMessage}
               </Text>
-              <Pressable
+              <CustomPressable
                 className="w-full bg-blue-500 p-2 rounded"
                 onPress={() => router.replace('/sign-in')}
               >
                 <Text className="text-white text-center">Go to Sign In</Text>
-              </Pressable>
+              </CustomPressable>
             </View>
           ) : (
             <>
@@ -78,44 +79,44 @@ export default function SignUpPage() {
               />
               {errors.email && <Text className="text-red-500 mb-2">{errors.email.message}</Text>}
 
-        <Controller
-          control={control}
-          rules={{ required: 'Password is required' }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="w-full p-2 mb-4 border border-gray-300 rounded"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Password"
-              secureTextEntry
-            />
-          )}
-          name="password"
-        />
-        {errors.password && <Text className="text-red-500 mb-2">{errors.password.message}</Text>}
+              <Controller
+                control={control}
+                rules={{ required: 'Password is required' }}
+                render={({ field: { onChange, onBlur, value } }) => (
+                  <TextInput
+                    className="w-full p-2 mb-4 border border-gray-300 rounded"
+                    onBlur={onBlur}
+                    onChangeText={onChange}
+                    value={value}
+                    placeholder="Password"
+                    secureTextEntry
+                  />
+                )}
+                name="password"
+              />
+              {errors.password && <Text className="text-red-500 mb-2">{errors.password.message}</Text>}
 
-        <Controller
-          control={control}
-          rules={{ required: 'Confirm Password is required' }}
-          render={({ field: { onChange, onBlur, value } }) => (
-            <TextInput
-              className="w-full p-2 mb-4 border border-gray-300 rounded"
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-              placeholder="Confirm Password"
-              secureTextEntry
-            />
-          )}
-          name="confirmPassword"
-        />
-        {errors.confirmPassword && <Text className="text-red-500 mb-2">{errors.confirmPassword.message}</Text>}
-        {passwordMismatch && (
-          <Text className="text-red-500 mb-2 text-center">Passwords do not match</Text>
-        )}
+              <Controller
+                control={control}
+                rules={{ required: 'Confirm Password is required' }}
+                render={({ field: { onChange, onBlur, value } }) => (
+                  <TextInput
+                    className="w-full p-2 mb-4 border border-gray-300 rounded"
+                    onBlur={onBlur}
+                    onChangeText={onChange}
+                    value={value}
+                    placeholder="Confirm Password"
+                    secureTextEntry
+                  />
+                )}
+                name="confirmPassword"
+              />
+              {errors.confirmPassword && <Text className="text-red-500 mb-2">{errors.confirmPassword.message}</Text>}
+              {passwordMismatch && (
+                <Text className="text-red-500 mb-2 text-center">Passwords do not match</Text>
+              )}
 
-              <Pressable
+              <CustomPressable
                 className="w-full bg-blue-500 p-2 rounded"
                 onPress={handleSubmit(onSubmit)}
                 disabled={isLoading}
@@ -123,7 +124,7 @@ export default function SignUpPage() {
                 <Text className="text-white text-center">
                   {isLoading ? 'Signing up...' : 'Sign Up'}
                 </Text>
-              </Pressable>
+              </CustomPressable>
 
               {error && <Text className="text-red-500 mt-2 text-center">{error}</Text>}
             </>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { Mic, Play } from 'lucide-react-native';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 export default function ExperienceLesson(): JSX.Element {
   return (
@@ -26,10 +27,13 @@ export default function ExperienceLesson(): JSX.Element {
                   {"\n"}And explain why it was memorable for you.
                 </Text>
               </View>
-              <TouchableOpacity className="flex-row items-center justify-center w-full bg-blue-600 px-4 py-2 rounded-md">
+              <CustomPressable
+                onPress={() => {}}
+                className="flex-row items-center justify-center w-full bg-blue-600 px-4 py-2 rounded-md"
+              >
                 <Play className="h-5 w-5 mr-2 text-white" />
                 <Text className="text-white font-semibold">Start Practice Session</Text>
-              </TouchableOpacity>
+              </CustomPressable>
             </View>
           </View>
         </View>

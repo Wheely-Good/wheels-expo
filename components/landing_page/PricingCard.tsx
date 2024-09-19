@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { ArrowRight } from 'lucide-react-native';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 interface PricingCardProps {
   title: string;
@@ -24,9 +25,12 @@ export default function PricingCard({ title, price, features, highlighted = fals
           </View>
         ))}
       </View>
-      <TouchableOpacity className={`w-full py-2 px-4 rounded-md ${highlighted ? 'bg-blue-600' : 'bg-gray-200'}`}>
+      <CustomPressable
+        onPress={() => {}}
+        className={`w-full py-2 px-4 rounded-md ${highlighted ? 'bg-blue-600' : 'bg-gray-200'}`}
+      >
         <Text className={`text-center font-medium ${highlighted ? 'text-white' : 'text-gray-800'}`}>Choose Plan</Text>
-      </TouchableOpacity>
+      </CustomPressable>
     </View>
   );
 }

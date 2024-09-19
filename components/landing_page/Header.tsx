@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import { Link } from 'expo-router';
 import { Mic } from 'lucide-react-native';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -21,9 +22,12 @@ export default function Header({ isScrolled, scrollToSection }: HeaderProps): JS
         {/* Navigation Links */}
         <View className="flex-row space-x-6">
           {['features', 'demo', 'pricing'].map((section) => (
-            <TouchableOpacity key={section} onPress={() => scrollToSection(section)}>
+            <CustomPressable
+              key={section}
+              onPress={() => scrollToSection(section)}
+            >
               <Text className="text-white capitalize">{section}</Text>
-            </TouchableOpacity>
+            </CustomPressable>
           ))}
         </View>
 

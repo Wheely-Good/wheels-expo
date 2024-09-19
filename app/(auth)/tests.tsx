@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import OptionsHeader from '@/components/OptionsHeader';
+import CustomPressable from '@/components/ui/CustomPressable';
 
 export default function TestsPage() {
   const tests = [
@@ -16,9 +17,12 @@ export default function TestsPage() {
       </View>
       <ScrollView className="flex-1 p-6">
         <Text className="text-3xl font-bold text-blue-600 mb-4">Your Tests</Text>
-        <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2 mb-4">
+        <CustomPressable
+          onPress={() => {}}
+          className="rounded-md bg-blue-600 px-4 py-2 mb-4"
+        >
           <Text className="text-white text-center">Take New Test</Text>
-        </TouchableOpacity>
+        </CustomPressable>
         {tests.map((test) => (
           <View key={test.id} className="rounded-lg bg-white p-6 shadow-md mb-4">
             <Text className="text-xl font-semibold text-blue-600">{test.name}</Text>
