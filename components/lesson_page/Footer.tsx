@@ -23,7 +23,7 @@ export default function Footer({
   lessonSteps,
 }: FooterProps) {
   return (
-    <View className="bg-white shadow-md mt-8">
+    <View className="bg-white shadow-md mt-8 pb-[56px] lg:pb-0">
       <View className="px-4 py-4">
         {/* Desktop view */}
         <View className="hidden md:flex md:flex-row md:justify-between md:items-center">
