@@ -108,7 +108,7 @@ export default function StepContent({
           </View>
           <View>
             <TouchableOpacity
-              className="absolute top-0 right-0 p-2"
+              className="absolute top-0 right-0 p-2 z-10"
               onPress={() => setBuildSentence([])}
             >
               <RotateCcw className="h-5 w-5 text-blue-600" />
