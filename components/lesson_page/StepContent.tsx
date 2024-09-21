@@ -99,7 +99,7 @@ export default function StepContent({
               {buildSentence.map((part, index) => (
                 <TouchableOpacity
                   key={index}
-                  className="py-1 px-2 bg-indigo-100 rounded border"
+                  className="py-1 px-2 bg-indigo-100 rounded"
                   onPress={() => setBuildSentence(buildSentence.filter((_, i) => i !== index))}
                 >
                   <Text className="text-gray">{part}</Text>

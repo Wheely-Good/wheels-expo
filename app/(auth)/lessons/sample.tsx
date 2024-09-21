@@ -98,44 +98,44 @@ export default function LessonPage() {
         <View className="w-full max-w-3xl px-4">
           <Progress value={(currentStep / (lessonSteps.length - 1)) * 100} className="w-full mb-4" />
           <View className="flex flex-row justify-between">
-          <Card className="p-6 bg-white w-[550px]">
-            <StepContent
-              step={lessonSteps[currentStep]}
-              showTranslation={showTranslation}
-              setShowTranslation={setShowTranslation}
-              quizAnswer={quizAnswer}
-              setQuizAnswer={setQuizAnswer}
-              buildSentence={buildSentence}
-              setBuildSentence={setBuildSentence}
-              typedAnswer={typedAnswer}
-              setTypedAnswer={setTypedAnswer}
-              checkAnswer={checkAnswer}
-              />
-            </Card>
-            <View className="flex flex-row justify-between">
-            <Button
-               variant="ghost"
-               onClick={handlePrevious}
-               disabled={currentStep === 0}
-               size="icon"
-               className="flex-row items-center text-gray-600"
-             >
-               <ChevronLeft className="h-6 w-6 mr-2" />
-             </Button>
-            {currentStep < lessonSteps.length - 1 && (
-            <Button 
-              className="flex-row items-center"
-              onClick={handleNext}
-              disabled={!isStepCompleted()}
-            >
-              <Text className="text-white mr-2">Next</Text>
-              <ChevronRight className="h-6 w-6 text-white" />
-            </Button>
-          )}
-     
+            <Card className="p-6 bg-white w-[550px]">
+              <StepContent
+                step={lessonSteps[currentStep]}
+                showTranslation={showTranslation}
+                setShowTranslation={setShowTranslation}
+                quizAnswer={quizAnswer}
+                setQuizAnswer={setQuizAnswer}
+                buildSentence={buildSentence}
+                setBuildSentence={setBuildSentence}
+                typedAnswer={typedAnswer}
+                setTypedAnswer={setTypedAnswer}
+                checkAnswer={checkAnswer}
+                />
+              </Card>
+              <View className="flex flex-row justify-between flex-1 w-full">
+              <Button
+                variant="ghost"
+                onClick={handlePrevious}
+                disabled={currentStep === 0}
+                size="icon"
+                className="flex-row items-center text-gray-600"
+              >
+                <ChevronLeft className="h-6 w-6 mr-2" />
+              </Button>
+              {currentStep < lessonSteps.length - 1 && (
+              <Button 
+                className="flex-row items-center"
+                onClick={handleNext}
+                disabled={!isStepCompleted()}
+              >
+                <Text className="text-white mr-2">Next</Text>
+                <ChevronRight className="h-6 w-6 text-white" />
+              </Button>
+            )}
+      
 
 
-            </View>
+              </View>
              
           </View>
         </View>
