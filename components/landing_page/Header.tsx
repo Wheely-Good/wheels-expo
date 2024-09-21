@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
 import { Mic } from 'lucide-react-native';
+import { Text } from "@/components/base/Text";
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -15,14 +16,14 @@ export default function Header({ isScrolled, scrollToSection }: HeaderProps): JS
         {/* Logo */}
         <View className="flex-row items-center">
           <Mic className="h-6 w-6 mr-2 text-white" />
-          <Text className="text-white text-xl font-bold">Wheels</Text>
+          <Text font="bold" className="text-white text-xl font-bold">Wheels</Text>
         </View>
 
         {/* Navigation Links */}
         <View className="flex-row space-x-6">
           {['features', 'demo', 'pricing'].map((section) => (
             <TouchableOpacity key={section} onPress={() => scrollToSection(section)}>
-              <Text className="text-white capitalize">{section}</Text>
+              <Text font="regular" className="text-white capitalize">{section}</Text>
             </TouchableOpacity>
           ))}
         </View>

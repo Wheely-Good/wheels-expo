@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { Text } from "@/components/base/Text";
 
 export default function Footer(): JSX.Element {
   const currentYear = new Date().getFullYear();

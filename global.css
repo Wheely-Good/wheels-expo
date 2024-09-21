@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'InterLight';
+  src: url('./assets/fonts/inter/Inter_18pt-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterRegular';
+  src: url('./assets/fonts/inter/Inter_18pt-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterMedium';
+  src: url('./assets/fonts/inter/Inter_18pt-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterBold';
+  src: url('./assets/fonts/inter/Inter_18pt-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InterExtraBold';
+  src: url('./assets/fonts/inter/Inter_18pt-ExtraBold.ttf') format('truetype');
+}
+
 @layer base {
     :root {
       --background: 0 0% 100%;

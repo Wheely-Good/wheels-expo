@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { Text } from "@/components/base/Text";
 import { Mic, Book, BarChart, Users } from 'lucide-react-native';
 import FeatureCard from '@/components/landing_page/FeatureCard';
 
@@ -7,7 +8,7 @@ export default function Features(): JSX.Element {
   return (
     <View className="py-16 px-4">
       <View className="max-w-7xl mx-auto">
-        <Text className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+        <Text font="bold" className="text-3xl font-extrabold text-gray-900 text-center mb-12">
           Why Choose Wheels for IELTS Speaking?
         </Text>
         <View className="flex-row flex-wrap justify-between">
