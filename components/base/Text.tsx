@@ -2,7 +2,7 @@ import React from 'react';
 import { Text as RNText, TextProps as RNTextProps } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 
-interface CustomTextProps extends RNTextProps {
+export interface CustomTextProps extends RNTextProps {
   font?: 'light' | 'regular' | 'medium' | 'bold' | 'extraBold';
   className?: string;
 }

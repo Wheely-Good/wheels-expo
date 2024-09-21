@@ -24,7 +24,7 @@ export default function AccountPage() {
     <ScrollView className="flex-1 bg-gray-100">
       <View className="flex-1 items-center justify-center p-6 min-h-screen">
         <View className="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-          <Text className="text-2xl font-bold text-blue-600 mb-6 text-center">Account Settings</Text>
+          <Text className="text-2xl font-bold text-gray mb-6 text-center">Account Settings</Text>
           <View className="space-y-4">
             <View className="space-y-2">
               <Text className="text-sm font-medium text-gray-700">Name</Text>

@@ -15,7 +15,7 @@ export default function PricingCard({ title, price, features, highlighted = fals
     <View className={`bg-white flex flex-col justify-between p-6 rounded-lg shadow-md ${highlighted ? 'ring-2 ring-blue-500 shadow-lg' : ''}`}>
       <View>
       <Text font="bold" className="text-2xl font-bold text-gray-900 mb-4">{title}</Text>
-      <Text font="extraBold" className="text-4xl font-extrabold text-blue-600 mb-6">
+      <Text font="extraBold" className="text-4xl font-extrabold text-gray mb-6">
         {price}<Text className="text-lg font-normal text-gray-500">/month</Text>
       </Text>
       <View className="space-y-3 mb-6">

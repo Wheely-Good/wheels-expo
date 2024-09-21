@@ -16,9 +16,10 @@ export default function MainLayout() {
     return <Loading />;
   }
 
-  if(!session) {
-    return <Redirect href="/sign-in" /> 
-  }
+  // if(!session) {
+  //   console.log("No session, redirecting to sign-in");
+  //   return <Redirect href="/sign-in" /> 
+  // }
 
   return (
     <View className="flex flex-col h-screen bg-gray-50">
