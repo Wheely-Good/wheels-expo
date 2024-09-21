@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import PricingCard from '@/components/landing_page/PricingCard';
+import { Text } from "@/components/base/Text";
 
 export default function Pricing(): JSX.Element {
   return (
     <View className="bg-white py-16 px-4">
       <View className="max-w-7xl mx-auto">
-        <Text className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+        <Text font="bold" className="text-3xl font-extrabold text-gray-900 text-center mb-12">
           Choose Your Plan
         </Text>
         <View className="grid grid-cols-1 md:grid-cols-3 gap-8">

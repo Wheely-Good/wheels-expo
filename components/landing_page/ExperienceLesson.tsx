@@ -1,12 +1,13 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { Mic, Play } from 'lucide-react-native';
+import { Text } from "@/components/base/Text";
 
 export default function ExperienceLesson(): JSX.Element {
   return (
     <View className="bg-gray-100 py-16 px-4">
       <View className="max-w-7xl mx-auto">
-        <Text className="text-3xl font-extrabold text-gray-900 text-center mb-12">
+        <Text font="bold" className="text-3xl font-extrabold text-gray-900 text-center mb-12">
           Experience an IELTS Speaking Lesson
         </Text>
         <View className="bg-white rounded-lg shadow-lg overflow-hidden">

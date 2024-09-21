@@ -1,14 +1,9 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider,
-} from "@react-navigation/native";
+
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
-import { useColorScheme } from "@/components/useColorScheme";
 import "../global.css";
 
 export { ErrorBoundary } from "expo-router";
@@ -17,7 +12,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    InterExtraBold: require("../assets/fonts/inter/Inter_18pt-ExtraBold.ttf"),
+    InterBold: require("../assets/fonts/inter/Inter_18pt-Bold.ttf"),
+    InterMedium: require("../assets/fonts/inter/Inter_18pt-Medium.ttf"),
+    InterRegular: require("../assets/fonts/inter//Inter_18pt-Regular.ttf"),
+    InterLight: require("../assets/fonts/inter/Inter_18pt-Light.ttf"),
     ...FontAwesome.font,
   });
 
