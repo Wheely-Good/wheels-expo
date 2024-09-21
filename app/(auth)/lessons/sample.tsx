@@ -3,10 +3,14 @@ import { View, SafeAreaView, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { lessonSteps } from '@/components/lesson_page/lesson_data';
 import Header from '@/components/lesson_page/Header';
-import ProgressBar from '@/components/lesson_page/ProgressBar';
 import StepContent from '@/components/lesson_page/StepContent';
 import Footer from '@/components/lesson_page/Footer';
 import ResultModal from '@/components/lesson_page/ResultModal';
+import { Card } from '@/components/ui/card';
+import { ChevronLeft, ChevronRight } from 'lucide-react-native';
+import { Button } from "@/components/ui/button";
+import { Text } from "@/components/base/Text";
+import { Progress } from "@/components/ui/progress"
 
 export default function LessonPage() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -90,10 +94,11 @@ export default function LessonPage() {
     <SafeAreaView className="flex-1 bg-gray-100">
       <StatusBar style="auto" />
       <Header currentStep={currentStep} setCurrentStep={setCurrentStep} />
-      <View className="flex-1 justify-center items-center">
+      <View className="flex-1 mt-10 items-center">
         <View className="w-full max-w-3xl px-4">
-          <ProgressBar progress={(currentStep / (lessonSteps.length - 1)) * 100} />
-          <ScrollView>
+          <Progress value={(currentStep / (lessonSteps.length - 1)) * 100} className="w-full mb-4" />
+          <View className="flex flex-row justify-between">
+          <Card className="p-6 bg-white w-[550px]">
             <StepContent
               step={lessonSteps[currentStep]}
               showTranslation={showTranslation}
@@ -105,19 +110,36 @@ export default function LessonPage() {
               typedAnswer={typedAnswer}
               setTypedAnswer={setTypedAnswer}
               checkAnswer={checkAnswer}
-            />
-          </ScrollView>
+              />
+            </Card>
+            <View className="flex flex-row justify-between">
+            <Button
+               variant="ghost"
+               onClick={handlePrevious}
+               disabled={currentStep === 0}
+               size="icon"
+               className="flex-row items-center text-gray-600"
+             >
+               <ChevronLeft className="h-6 w-6 mr-2" />
+             </Button>
+            {currentStep < lessonSteps.length - 1 && (
+            <Button 
+              className="flex-row items-center"
+              onClick={handleNext}
+              disabled={!isStepCompleted()}
+            >
+              <Text className="text-white mr-2">Next</Text>
+              <ChevronRight className="h-6 w-6 text-white" />
+            </Button>
+          )}
+     
+
+
+            </View>
+             
+          </View>
         </View>
       </View>
-      <Footer
-  currentStep={currentStep}
-  totalSteps={lessonSteps.length}
-  handlePrevious={handlePrevious}
-  handleNext={handleNext}
-  handleSkipIntroduction={handleSkipIntroduction}
-  isStepCompleted={isStepCompleted}
-  lessonSteps={lessonSteps}
-/>
 <ResultModal
   isVisible={showModal}
   isCorrect={isCorrect}

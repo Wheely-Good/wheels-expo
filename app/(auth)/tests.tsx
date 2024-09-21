@@ -30,7 +30,7 @@ export default function TestsPage() {
       <ScrollView className="flex-1 p-6">
         <View className="flex-row justify-between items-center mb-4">
           <Text className="text-3xl font-bold text-gray">Your Tests</Text>
-          <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2">
+          <TouchableOpacity className="rounded-md bg-primary px-4 py-2">
             <Text className="text-white text-center text-sm">New Test</Text>
           </TouchableOpacity>
         </View>

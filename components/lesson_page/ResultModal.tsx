@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TouchableOpacity, Modal } from 'react-native';
+import { View, TouchableOpacity, Modal } from 'react-native';
 import { Volume2, Flag } from 'lucide-react-native';
+import { Text } from '@/components/base/Text';
 
 interface ResultModalProps {
   isVisible: boolean;
@@ -37,10 +38,10 @@ export default function ResultModal({
     >
       <View className="flex-1 justify-center items-center bg-black bg-opacity-50">
         <View className={`bg-white p-6 rounded-lg sm:w-[425px] ${isCorrect ? 'bg-green-100' : 'bg-gray-100'}`}>
-          <Text className={`text-2xl font-bold mb-4 ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+          <Text className={`text-2xl font-regular mb-4 ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
             {isCorrect ? 'Correct' : 'Incorrect'}
           </Text>
-          <Text className="text-lg font-semibold mb-2">{displayedSentence}</Text>
+          <Text font="medium" className="text-lg mb-2">{displayedSentence}</Text>
           <Text className="text-gray-600 mb-4">{displayedTranslation}</Text>
           <View className="flex-row justify-between mb-4">
             <TouchableOpacity className="bg-gray-200 p-2 rounded">
