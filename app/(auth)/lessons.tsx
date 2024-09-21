@@ -27,7 +27,7 @@ export default function LessonsPage() {
       }}
     >
       <View className="rounded-lg bg-white p-4 shadow-md">
-        <Text className="text-xl font-semibold text-blue-600 mb-2">{item.name}</Text>
+        <Text className="text-xl font-semibold text-gray mb-2">{item.name}</Text>
         <View className="flex-row items-center">
           {item.status === 'completed' && (
             <>
@@ -56,8 +56,8 @@ export default function LessonsPage() {
       </View>
       <ScrollView className="flex-1 p-6">
         <View className="flex-row justify-between items-center mb-4">
-          <Text className="text-3xl font-bold text-blue-600">Lessons</Text>
-          <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2">
+          <Text className="text-3xl font-bold text-gray">Lessons</Text>
+          <TouchableOpacity className="rounded-md bg-primary px-4 py-2">
             <Text className="text-white text-center text-sm">New Lesson</Text>
           </TouchableOpacity>
         </View>

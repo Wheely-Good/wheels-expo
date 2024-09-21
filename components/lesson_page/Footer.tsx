@@ -52,7 +52,7 @@ export default function Footer({
           {currentStep < 4 && (
             <Button 
               onClick={handleSkipIntroduction} 
-              className="w-full bg-blue-100 text-blue-600"
+              className="w-full bg-blue-100 text-gray"
             >
               <Text>Skip Introduction</Text>
             </Button>

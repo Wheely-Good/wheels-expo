@@ -9,7 +9,7 @@ export default function TrainingPage() {
         <OptionsHeader section="training" />
       </View>
       <View className="flex-1 p-6">
-        <Text className="text-3xl font-bold text-blue-600 mb-4">Training</Text>
+        <Text className="text-3xl font-bold text-gray mb-4">Training</Text>
         <Text className="text-lg text-gray-600">
           Access your personalized training programs and track your progress.
         </Text>

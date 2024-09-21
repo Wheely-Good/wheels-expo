@@ -16,7 +16,7 @@ export default function ExperienceLesson(): JSX.Element {
             <Text className="text-gray-600 mb-6">In this lesson, you'll practice describing a memorable journey you've taken. We'll focus on using descriptive language, proper tenses, and structuring your response.</Text>
             <View className="space-y-4">
               <View className="flex-row items-start">
-                <Mic className="h-6 w-6 text-blue-600" />
+                <Mic className="h-6 w-6 text-gray" />
                 <Text className="ml-3 text-gray-700">
                   <Text className='font-bold'>Describe a memorable journey you have taken. You should say:</Text>
                   {"\n"}

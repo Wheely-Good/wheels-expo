@@ -15,7 +15,7 @@ export default function TestsPage() {
   const renderTestCard = ({ item }: { item: any }) => (
     <View className={`${numColumns === 1 ? 'w-full' : 'w-1/3'} p-2`}>
       <View className="rounded-lg bg-white p-4 shadow-md">
-        <Text className="text-lg font-semibold text-blue-600">{item.name}</Text>
+        <Text className="text-lg font-semibold text-gray">{item.name}</Text>
         <Text className="text-xs text-gray-500">Date: {item.date}</Text>
         <Text className="text-xs text-gray-500">Score: {item.score}</Text>
       </View>
@@ -29,7 +29,7 @@ export default function TestsPage() {
       </View>
       <ScrollView className="flex-1 p-6">
         <View className="flex-row justify-between items-center mb-4">
-          <Text className="text-3xl font-bold text-blue-600">Your Tests</Text>
+          <Text className="text-3xl font-bold text-gray">Your Tests</Text>
           <TouchableOpacity className="rounded-md bg-blue-600 px-4 py-2">
             <Text className="text-white text-center text-sm">New Test</Text>
           </TouchableOpacity>

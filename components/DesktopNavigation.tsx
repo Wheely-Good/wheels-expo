@@ -5,7 +5,7 @@ import { Book, TestTube2, User, Bike, Dumbbell } from 'lucide-react-native';
 
 export default function DesktopNavigation() {
   return (
-    <View className="hidden lg:flex w-16 bg-blue-600 h-screen fixed left-0 top-0 flex-col items-center justify-between py-4">
+    <View className="hidden lg:flex w-16 bg-primary h-screen fixed left-0 top-0 flex-col items-center justify-between py-4">
       <View className="space-y-8 mt-5">
         <Link href="/" className="block text-white">
           <Bike className="h-6 w-6 mb-4" />
