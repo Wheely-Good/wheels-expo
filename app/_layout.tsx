@@ -12,11 +12,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
-    InterExtraBold: require("../assets/fonts/inter/Inter_18pt-ExtraBold.ttf"),
-    InterBold: require("../assets/fonts/inter/Inter_18pt-Bold.ttf"),
-    InterMedium: require("../assets/fonts/inter/Inter_18pt-Medium.ttf"),
-    InterRegular: require("../assets/fonts/inter//Inter_18pt-Regular.ttf"),
-    InterLight: require("../assets/fonts/inter/Inter_18pt-Light.ttf"),
+    InterExtraBold: require("../assets/fonts/Inter_18pt-ExtraBold.ttf"),
+    InterBold: require("../assets/fonts/Inter_18pt-Bold.ttf"),
+    InterMedium: require("../assets/fonts/Inter_18pt-Medium.ttf"),
+    InterRegular: require("../assets/fonts//Inter_18pt-Regular.ttf"),
+    InterLight: require("../assets/fonts/Inter_18pt-Light.ttf"),
     ...FontAwesome.font,
   });
 
