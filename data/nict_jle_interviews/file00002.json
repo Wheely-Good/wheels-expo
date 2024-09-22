@@ -1,0 +1,265 @@
+{
+    "metadata": {
+      "filename": "file00002.txt",
+      "date": "1999-12-13",
+      "sex": "female",
+      "country": "Japan",
+      "step": "2",
+      "SST_level": "5",
+      "SST_task2": "restaurant",
+      "SST_task3": "train_intermediate",
+      "SST_task4": "zoo"
+    },
+    "dialogue": {
+      "stage_1": [
+        {
+          "speaker": "examiner",
+          "text": "ok. My name is XXX01. What is your name?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "I'm XXX02."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Nice to meet you."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Nice to meet you. ok. Can I call you XXX02?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes, of course."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Thank you. ok. XXX02, where do you live?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "I live in XXX03. My my house is near XXX04 XXX04 station."
+        },
+        {
+          "speaker": "candidate",
+          "text": "That is nice place."
+        },
+        {
+          "speaker": "examiner",
+          "text": "I see. Do you live with your family?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "No. I live with my bird and my friend."
+        },
+        {
+          "speaker": "examiner",
+          "text": "I see. What kind of bird?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "He is hi his color is blue. Maybe, maybe, ba nandakkena ba barchar barchar."
+        },
+        {
+          "speaker": "examiner",
+          "text": "I see."
+        },
+        {
+          "speaker": "candidate",
+          "text": "I'm sorry. I don't know."
+        },
+        {
+          "speaker": "examiner",
+          "text": "That's all right."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Do you enjoy taking care of the bird?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "No, no. But he gives me much love, so I love him, too. But actually, I don't like to care of hi hi him because he is very noisy and he is very selfish. So sometimes, I get angry."
+        },
+        {
+          "speaker": "examiner",
+          "text": "I see. ok, XXX02, have you been busy these days?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "So-so. I have to I ha I had to go to A ALC's program twice a week, so so just busy, but of course, I enjoyed it."
+        },
+        {
+          "speaker": "examiner",
+          "text": "I see. And, do you work?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. I'm salesperson. But my office is in my house, so that is good for me."
+        },
+        {
+          "speaker": "examiner",
+          "text": "What do you sell?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Ka a kind of computer system, software or something. But I can't make software. I just sell."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Oh but sometimes you have to explain how it works."
+        },
+        {
+          "speaker": "candidate",
+          "text": "No. If my customer ask me about the computer system, I I ask my I will ask my ka colleague about that. And he he teach he teach he will teach the customer about the system."
+        }
+      ],
+      "stage_2": [
+        {
+          "speaker": "examiner",
+          "text": "ok, thank you. Now please look at this picture and describe it."
+        },
+        {
+          "speaker": "candidate",
+          "text": "This is a kind of party. No. No. This is this is this place is a restaurant. Three cou three couples eat some dishes. Maybe, they are lovers. A a woman who who dress who wear pink color dress is looking her boyfriend."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok, thank you, XXX02. Good."
+        },
+        {
+          "speaker": "candidate",
+          "text": "I am sorry."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Oh that's all right. You did a good job. Are you going to a nice restaurant for a Christmas?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "I don't have any plan in Christmas, but but I'd like to I prefer going to a restaurant I prefer going to amuse amusement park than nice restaurant."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Why?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Because I have to eat nice dinner very quietly in the no noble restaurant. But amusement park is so noisy. If if a if za amu the amusement park is too crowded, I will I will enjoy, some rice or something."
+        }
+      ],
+      "stage_3": [
+        {
+          "speaker": "examiner",
+          "text": "Yeah. ok. I understand. ok. Thank you. Now, please read this and let's do a role play."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Hello, how may I help you, miss?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Would you tell me how much how much how much cost to New York by train?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Well we have two different kinds of trains."
+        },
+        {
+          "speaker": "candidate",
+          "text": "I'm sorry. I don't have much money, so so I'd like to buy cheap ticket."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Then local train. Ten dollars, but very slow."
+        },
+        {
+          "speaker": "candidate",
+          "text": "It's ok. And and could you tell me how to get to how to get to from here to New York? Which which plat platform?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Number three."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Thank you. Thank you for your kindness. Good-bye."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok, good-bye. Have a nice trip."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. Thank you, XXX02. Well do you like to travel by train?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "So so much so much. I like I like to ride airplane."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Why airplanes are better?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Because airplane is very con convenient for me. I have to I have to take short time short time and that is ba that is le less tiring than train."
+        }
+      ],
+      "stage_4": [
+        {
+          "speaker": "examiner",
+          "text": "Now finally, let's do this. Please make a story using these six pictures and please start with \"One day last week\"."
+        },
+        {
+          "speaker": "candidate",
+          "text": "\"Last week\"? Ta Takeshi Takeshi loved Hiroko, so so he he thank he thank that. He thank to that. They went to zoo. So he so he call called her, and he asked her she like she she she likes she liked zoo or not. Hiroko's answer is \"yes.\". So he drove his car, and they went to a zoo. Hiroko wanted to see lion's area, so they went to there. And they enjoyed seeing lion. But she she she was afraid of lion, because the lion barked her. And then, they went to monkey's area. A monkey was very pretty, so so she she said to him she said to him, \"I want to pick up you in my house.\". But the monkey the monkey didn't didn't say anything. And then, they came back home. But he for forgot his car, so so they they walked."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok, good. Thank you, XXX02. Do you think a zoo is a good place for a date?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. Because there are many kinds of animals, so that is very useful to talk each other about that."
+        }
+      ],
+      "stage_5": [
+        {
+          "speaker": "examiner",
+          "text": "very good. ok. Thank you very much. The interview is almost over. But what are you going to do after this test?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "I I will continue studying English very hard."
+        },
+        {
+          "speaker": "examiner",
+          "text": "So you like studying English so much."
+        },
+        {
+          "speaker": "candidate",
+          "text": "So-so. Anyway anyway, I want to I want to learn English, and I want to go to Hawaii someday. So so, I con I will continue studying English."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. Thank you very much."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Thank you very much."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Have a good day."
+        }
+      ]
+    }
+  }

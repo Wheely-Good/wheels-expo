@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "filename": "file00005.txt",
+    "date": "1999-12-13",
+    "sex": "male",
+    "country": "Japan",
+    "SST_level": "4",
+    "SST_task2": "neighborhood",
+    "SST_task3": "shopping_intermediate",
+    "SST_task4": "movie"
+  },
+  "dialogue": {
+    "stage_1": [
+      {
+        "speaker": "examiner",
+        "text": "May I have your name?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "My er my name is XXX01."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Nice to meet you, XXX01."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Nice to meet you, too."
+      },
+      {
+        "speaker": "examiner",
+        "text": "So, XXX01, what is your job?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Umm. I work umm in XXX02. Mm. But, umm in this year, I I am mm studying at um XXX03."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm. Er. Which do you like better, working or studying?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ah. Studying is better."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why is that?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Um I eh I don't I don't have mm time in my working days, but now, um I have um a lot of time um to study. Mm. So I like um better um studying life. Mm."
+      },
+      {
+        "speaker": "examiner",
+        "text": "So, besides studying, what do you usually do in your free time?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm ah m ah. Be ah beside? Mm."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mm ah. Except studying, what do you do in your free time?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Free time? Umhm mm. Usually, eh I read umm many book and uhu mhm play sports."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mm. What kind of sports?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm. I like um baseball mm and ski. Mm. So I usually ii play baseball. Mm. And I like umm training er gym training. So I often go to uhu gy er gym club."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Ah. Do you belong to any baseball team?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Ah I i belong to two baseball team. Umm. One of two is umm my company te team, and um another team is my ii hign school mm high school uh O B team."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mm. Ah. Which is a stronger team?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhmm. Huh. School m high school team is stronger than mm other one."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Why do you think that high school baseball team is stronger?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Umm. I think mm they are er er they are er play m play baseball. But uh my company team member is umhm umhm umhm some of um team member is um not good at um play baseball."
+      },
+      {
+        "speaker": "examiner",
+        "text": "ok. All right. So, ah do you live with your family?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yeah. I i live in ah I live with my wife and my cat."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm. Tell me about your cat."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm m. Cat? Mm."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yeah. Please tell me about your cat."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ah. Mhm. My cat is er is teeth teeth-lost teeth-lost cat. Because um she when she ii was child, she run mm she run around um my room, and she eh crashed crashed uh corner. So she lost umm mm front teeth. But very eh pretty cat."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Wow. That's very unusual for cat."
+      }
+    ],
+    "stage_2": [
+      {
+        "speaker": "examiner",
+        "text": "Mm. Wow. Interesting. All right. So, first thing today. ok. Please take a look at this picture, and, please describe this picture for me."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mm. Mhm. This is uhu one of the er er one of the town picture. Mhm mm. There are mm many eh child many children and uhu uh dog. Mm. And she er they play mm volleyball. Mm. And umhm mm he er he is running. And uhu mm they are talking about mhm something. And mhm the cat er is on the er on the car. Mm. And uh um she is uhu jump er ro roping jumping um um by eh herself. And she a he is uhu reading a newspaper. Mm. It is very eh fine fine day. Mm."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mm. ok. So, please compare this neighborhood to the neighborhood where you live."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm. Mm. I live in mm mansion ty ty type. Mm. So um we have uhu not we we umhm don't have uhu uh some green like this picture. Mm. I like mhm green, so mm I want to uh live uh in like this picture."
+      }
+    ],
+    "stage_3": [
+      {
+        "speaker": "examiner",
+        "text": "Mhm. ok. All right. Thank you very much. So, next, let's try a role play. You've done this before?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "M?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Have you read this card before?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mm. No."
+      },
+      {
+        "speaker": "examiner",
+        "text": "No? ok. Please read this card."
+      },
+      {
+        "speaker": "examiner",
+        "text": "ok?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Er. Please mhm mhm I'd like have uh some mm shirt mhm some shirt uh for men. Mhm. Where ah do you have mhm m men's shirt?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm. We have many right here."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Uuh uh uh please mhm show me eh some of one."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mm. ok. There are many kinds of shirts."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mm. And mm color of mhm er blue color shirt. Mm. Do you have?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yes."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please show me eh that?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Er. There are many blue shirts made of many kinds of materials."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm mm. I have uh blue striped shirt and mhm made of uh cotton."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Cotton?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm mm mhm mm. Please mm show me."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yeah. ok. We have um three kinds of blue striped shirt. And this is er fifteen thousand yen. This is ten thousand yen and this is eight thousand yen."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhmm mm mm. Can I er can I uuh take this one ah mhm. try try this one?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Sure."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mm. ok. Mm. I think it is too uuh too big for me. Mm mm. Do you have uhu smaller uhh er do you have something smaller mm one?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Er. Yes. We have smaller size."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mm a ah. I have uh this ten-dollars shirt. Mm. I want to this one."
+      },
+      {
+        "speaker": "examiner",
+        "text": "ok."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Please uhu m show me eh smaller size."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Right here is the smaller size."
+      },
+      {
+        "speaker": "candidate",
+        "text": "ok. And I eh want to uh this one."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Good. ok. Er. This is the end of role play. So, do you usually buy your clothes by yourself?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "No."
+      },
+      {
+        "speaker": "examiner",
+        "text": "How do you decide?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I don't like uh chose uhu uhu chose the ah a many eh of uh clothes. So I usually eh a my wife usually eh cho choose chooses uh my shirt."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm. Ah. Do you sometimes buy a present for her?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Ye yes. Mm. I have present umm in a when I ah when we are we have u before mm we have marry. Mm. But after marry after we eh we have marriage, mm uuhn I don't I don't present."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Yeah. Maybe, you should. This Christmas."
+      }
+    ],
+    "stage_4": [
+      {
+        "speaker": "examiner",
+        "text": "All rihgt. So, the last thing today. Please take a look at these pictures. ok? There are pictures from one to six. And, please make up a story based on these pictures. ok? And this happened before. So, please start your story with \"One day last week\"."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm mhm. One day last week, mhm they eh want to uh u want to go mhm somewhere, but mm it is mhm rainy day. So uh they eh thin mhm they eh thinking they are er thinking umm mm thinking about uh schedule. So mm he er they decide to uh go to uh movies er decided movies. And, uh in the er movie theater, they um they buy er they bought um some drink and popcorn. And they eh were ah looking movie theater ah with with drink and popcorns. And they fee they felt umhm umm they they think uh they thought um the movie is uhu very interesting. Mm. So, mm they umm they were talking about mhm a movies a movie eh after ah after a movies."
+      },
+      {
+        "speaker": "examiner",
+        "text": "ok. All right. When you go to see a movie with your wife, how do you decide which movie to see?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mhm. I like umm mm mhm nandarona I like mhm action movie, mm and mm my wife is umhm action er likes um action movies, too. Mm. So we eh we often m action movies er action movie. Mm. But, mm before I we are marriage, mm we eh often went to love romance movie."
+      },
+      {
+        "speaker": "examiner",
+        "text": "ok. Ah. So, in the theater, do you usually buy like popcorns or drinks?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yes. Mm I mm usually eh go to a went to umhm driving theater. Do you know?"
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm."
+      },
+      {
+        "speaker": "candidate",
+        "text": "So mm we are ah ah eating ah in the ah car."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm. Er what are some good points of a driving theater?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Mm mhm. It is um mm I can mm I can be eh relaxed mm in my um car. The movie theater's seat is very mm hard for for me. Mm. So I I like umm mo movie driving theater."
+      }
+    ],
+    "stage_5": [
+      {
+        "speaker": "examiner",
+        "text": "Good. All right. ok. We have come to almost end of the interview. So, what are you going to do today?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "I eh go to uh my university, mm and I study eh here er there."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Mhm. Are you going to take some class or studying in library?"
+      },
+      {
+        "speaker": "candidate",
+        "text": "Yeah. Er. Studying uh la laboratory."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Uhm. Mm. All right. So, have a good time."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Thank you very much for coming."
+      },
+      {
+        "speaker": "candidate",
+        "text": "Thank you very much."
+      },
+      {
+        "speaker": "examiner",
+        "text": "Thank you."
+      }
+    ]
+  }
+}

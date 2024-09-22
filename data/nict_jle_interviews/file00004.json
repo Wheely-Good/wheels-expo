@@ -1,0 +1,360 @@
+{
+    "metadata": {
+      "filename": "file00004.txt",
+      "date": "1999-12-13",
+      "sex": "female",
+      "country": "Japan",
+      "SST_level": "4",
+      "SST_task2": "electric shop",
+      "SST_task3": "invitation_intermediate",
+      "SST_task4": "restaurant"
+    },
+    "dialogue": {
+      "stage_1": [
+        {
+          "speaker": "examiner",
+          "text": "ok. ok. My name is XXX01. May I have your name?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "My name is XXX02."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Nice to meet you, XXX02."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Thank you. Nice to meet you."
+        },
+        {
+          "speaker": "examiner",
+          "text": "So, ah XXX02, where do you live?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er I live in XXX03 XXX04, mm and I live in fifteen years old in XXX03."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. Er. Do you like your town?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes, I do. Er my town is very convenience, and er but mm XXX05's jiken in XXX03. I am very shocking."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Do you know that place very well?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. I'm XXX06's house my home cross the road. I know his husband. I look sometimes he rides a bicycle everyday."
+        },
+        {
+          "speaker": "examiner",
+          "text": "I hear he is a Buddhist priest."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. But I don't know her and XXX05's mother because I have two young two child, but my child is very mm older than hers child."
+        },
+        {
+          "speaker": "examiner",
+          "text": "That's a very shocking news. ok. Ah. So, in your free time, what do you usually do?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er. I like the exercise very well. My I go to the training gym everyday. But um um I I m I take care of two child and my husband. After that, I go to the gym and department store, supermarket, and that's all."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Why did you decide to so have some exercise in a gym?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. I my husband we want to the play golf with family, but I don't like a sports. He said \"You should um go to the gym.\". I go to the gym for five years old."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Do you play golf, too?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. Er. A little. But I cannot play er golf very well."
+        },
+        {
+          "speaker": "examiner",
+          "text": "How do you practice golf?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er. Once a week. I practice uhu once a week with my sons."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. Er. How old is your son?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "My son is thirteen years old."
+        },
+        {
+          "speaker": "examiner",
+          "text": "So he plays golf with you."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. But um he plays the golf better than me."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Who is the best golf player in your family?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "But my husband is best golf. My daughter is mm my daughter is is play golf than er sometimes."
+        }
+      ],
+      "stage_2": [
+        {
+          "speaker": "examiner",
+          "text": "All right. ok. First thing today. ok. Have you seen this picture before?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "No."
+        },
+        {
+          "speaker": "examiner",
+          "text": "No? ok. All right. Please describe this picture for me."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er mm. He he bought he bought a he bought a Christmas gift for his parents at the mm elect uhu at the department store. Er. He sai er he asked he asked ah mm shop shopmaster, \"Excuse me. Er. How much this watch? Um er. Shopmaster said, \"Oh ah. This is a service price for today.\". \"Oh really?\" he said. Er. \"Please er bri please bring me a red watch please.\". Er. \"Sure.\", he said."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. All right. Ah. Are you going to buy some presents Christmas presents to your family?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. I am going to the present for my family."
+        },
+        {
+          "speaker": "examiner",
+          "text": "What do you think is the most difficult thing to select a gift?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er. I thin I I think um my daughter is my son is uhu is er wan want to play a computer game. I think ah mm kindly and gently computer game I bought for them. The computer game is very mm violence mm in today, but I I don't like it."
+        },
+        {
+          "speaker": "examiner",
+          "text": "You don't like them?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes."
+        },
+        {
+          "speaker": "examiner",
+          "text": "So, why did you buy the present for your children?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Maybe, my son is uh believes a Santa Clause umm in today. But I think he he take care of me ah ah about Christmas gift."
+        }
+      ],
+      "stage_3": [
+        {
+          "speaker": "examiner",
+          "text": "ok. Thank you very much. ok. Next, we would like to try a role play. ok. Please read this card. And, when you are ready, I will start."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Ah."
+        },
+        {
+          "speaker": "examiner",
+          "text": "You did this before? ok. Then change. How about this one? ok? Ring-ring. Hello."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Hello. XXX02 speaking."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Hi, XXX02."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. Er. Would you like uh would you go to ah would you um go to see the uh watch the T V?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "T V?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Ah. Watch the movie?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Oh yeah. Yes."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Um um. Do you like uh which do you like, um \"Sixth Sense\" or uhhu \"Gozzilla\"?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "I prefer \"Sixth Sense\"."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Oh I'm I'm, too. Er er er. How how er ah do you have do you have lunch do you have lunch with me?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Sure."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Oh er. What time is what time is ah mm what time is watching to movie movie?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Today?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "In today."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Er. I'll be free all afternoon today."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Oh. ja I I am going to be Shibuya. Do you know the Shibuya?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Uh-huh."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Uh um. We met a we will met a Hachikomae. Do you know?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Uh-huh. Yes."
+        },
+        {
+          "speaker": "candidate",
+          "text": "I so I I I will go to the Shibuya three o'clock, nannda, er before Hachikomae."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. All right. So, see you at three o'clock today."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. Thank you very much. ok. This is the end of the role play. ok. Ah. So, XXX02, please compare, watching a movie in a theater and ah renting a video at home."
+        },
+        {
+          "speaker": "candidate",
+          "text": "I like the watching the mm movie on ah video at home because mm the er movie fee is very expensive in Japan. My family go all my family go to the mo go to watch movie, ah four members' ah fee is ah ah one hundred um one ten thousand yen. Very expensive."
+        }
+      ],
+      "stage_4": [
+        {
+          "speaker": "examiner",
+          "text": "All right. ok. All right. So, last thing today. ok. Please take a look at these pictures. ok. There are six pictures from one to six. And, please make up a story based on these pictures. And, please start your story with \"One day last week\"."
+        },
+        {
+          "speaker": "candidate",
+          "text": "One day last week, um my son met uh ma um his uncle at the res a a front of restaurant. Ah. Because my son's the birthday, ma er so my son's uncle er bring to him famous restaurant in my town. Er. my his uncle er reservation and his uncle reser reservation uh reserved the table in restaurant. Umm. Wai waitress um send to them er restaurant's menu. His uncle said, \"Do you have any drink?\". Oh er I my son said \"I I want the beer.\". \"Oh really? I drink the I drink the wines\", said to said my ah ah his uncle. Umm. They are enjoy the dinner uh very well. My son's is very satisfy for today's dinner. My er his uncle paid the for the dinner the my er his uncle pay the pay for the dinner. Er. And, eight o'clock, mm hi my sons is my son was came back. Er. His son said, \"Take care of yourself. Good-bye.\". My son said, \"Good-bye. Thank you.\"."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. Thank you. All right. So er I think you have a big family, so but, what do you think of having dinner with your family in a restaurant?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Ah um. My family likes a er Italian Italian restaurant."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Er. Tell me about your favorite Italian restaurant."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Uhm. My family ah likes \"Chanti\" in Nishiazabu. Very famous res Italian restaurant."
+        },
+        {
+          "speaker": "examiner",
+          "text": "What does it look like?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er. The restaurant is mm very old restaurant in Japan. And the mm mm the price more expensive tha umhm than more than any any other restaurant in Tokyo. But, today, is very cheap for dinner in \"Chanti\"."
+        },
+        {
+          "speaker": "examiner",
+          "text": "What kind of interior do they have?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Interior?"
+        },
+        {
+          "speaker": "examiner",
+          "text": "Inside of the restaurant."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Simple. And the restaurant interior is a very simple, and very chic and very mhm mhm very ah small. The service is very kindly and gently."
+        }
+      ],
+      "stage_5": [
+        {
+          "speaker": "examiner",
+          "text": "ok. All right. Thank you very much. We have come to almost the end of the interview. Do you have any plans today?"
+        },
+        {
+          "speaker": "candidate",
+          "text": "Er. My son and daughter in my home in now. I have come back my home. I prepare their lunch."
+        },
+        {
+          "speaker": "examiner",
+          "text": "So you have to do a lot of hom er housework."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes."
+        },
+        {
+          "speaker": "examiner",
+          "text": "ok. All right. ok. Have a good time with your children."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Yes. I like the children."
+        },
+        {
+          "speaker": "examiner",
+          "text": "Good. All right. Thank you very much. This is the end of the interview."
+        },
+        {
+          "speaker": "candidate",
+          "text": "Thank you."
+        }
+      ]
+    }
+  }
