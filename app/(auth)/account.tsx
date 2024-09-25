@@ -36,9 +36,12 @@ export default function AccountPage() {
   }, [session, getProfile]);
 
   const handleProfileUpdate = async () => {
+  const currentProfile = await getProfile();
+  if (currentProfile && (currentProfile.username !== username || currentProfile.full_name !== fullName)) {
     await updateProfile(username, fullName);
-    // Alert.alert('Success', 'Profile updated successfully!');
-  };
+    Alert.alert('Success', 'Profile updated successfully!');
+  }
+};
 
   if (isLoading || loading) {
     return <Loading />;

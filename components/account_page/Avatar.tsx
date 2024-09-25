@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, TouchableOpacity, Text } from 'react-native';
+import { View, Image, TouchableOpacity, Text, ActivityIndicator } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useAuthStore } from '@/hooks/useAuthStore';
 
@@ -56,11 +56,14 @@ export default function Avatar({ url, size = 150, onUpload }: AvatarProps) {
       <TouchableOpacity
         onPress={pickImage}
         disabled={uploading}
-        className={`mt-2 rounded-md bg-blue-600 px-4 py-2 ${uploading ? 'opacity-50' : ''}`}
+        className={`mt-2 w-40 h-9 rounded-md bg-blue-600 px-4 py-2`}
       >
-        <Text className="text-white text-center">Change Avatar</Text>
+        {uploading ? (
+          <ActivityIndicator color="white" size="small" />
+        ) : (
+          <Text className="text-white text-center">Change Avatar</Text>
+        )}
       </TouchableOpacity>
-      {uploading && <Text className="mt-2">Uploading...</Text>}
     </View>
   );
 }

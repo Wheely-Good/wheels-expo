@@ -110,8 +110,6 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   uploadAvatar: async (uri: string, previousUrl: string | null) => {
     try {
-      set({ isLoading: true, error: null });
-
       const session = get().session;
       if (!session?.user) throw new Error('No active session or user!');
 
@@ -158,14 +156,11 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       console.error('Error uploading avatar:', error);
       set({ error: (error as Error).message });
       return null;
-    } finally {
-      set({ isLoading: false });
     }
   },
 
   updateProfile: async (username: string, fullName: string) => {
     try {
-      set({ isLoading: true, error: null });
 
       const session = get().session;
       if (!session?.user) throw new Error('No active session or user!');
@@ -174,10 +169,9 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     } catch (error) {
       console.error('Error updating profile:', error);
       set({ error: (error as Error).message });
-    } finally {
-      set({ isLoading: false });
     }
   },
+
 
   upsertProfile: async (userId: string, updates: Partial<{ username: string; full_name: string; avatar_url: string }>) => {
     try {
