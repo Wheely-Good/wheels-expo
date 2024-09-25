@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, Text, ActivityIndicator } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { useAuthStore } from '@/hooks/useAuthStore';
+import { useProfileStore } from '@/hooks/useProfileStore';
 
 interface AvatarProps {
   url: string | null;
@@ -11,7 +11,7 @@ interface AvatarProps {
 
 export default function Avatar({ url, size = 150, onUpload }: AvatarProps) {
   const [uploading, setUploading] = useState(false);
-  const uploadAvatar = useAuthStore((state) => state.uploadAvatar);
+  const uploadAvatar = useProfileStore((state) => state.uploadAvatar);
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({

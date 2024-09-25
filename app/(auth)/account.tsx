@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { useAuthStore } from '@/hooks/useAuthStore';
+import { useProfileStore } from '@/hooks/useProfileStore';
 import Loading from '@/components/Loading';
 import Avatar from '@/components/account_page/Avatar';
 
 export default function AccountPage() {
-  const { session, isLoading, signOut, updateProfile, getProfile } = useAuthStore((state) => ({
+  const { session, isLoading, signOut } = useAuthStore((state) => ({
     session: state.session,
     isLoading: state.isLoading,
     signOut: state.signOut,
+  }));
+
+  const { updateProfile, getProfile } = useProfileStore((state) => ({
     updateProfile: state.updateProfile,
     getProfile: state.getProfile,
   }));
@@ -36,12 +40,12 @@ export default function AccountPage() {
   }, [session, getProfile]);
 
   const handleProfileUpdate = async () => {
-  const currentProfile = await getProfile();
-  if (currentProfile && (currentProfile.username !== username || currentProfile.full_name !== fullName)) {
-    await updateProfile(username, fullName);
-    Alert.alert('Success', 'Profile updated successfully!');
-  }
-};
+    const currentProfile = await getProfile();
+    if (currentProfile && (currentProfile.username !== username || currentProfile.full_name !== fullName)) {
+      await updateProfile({ username, full_name: fullName });
+      Alert.alert('Success', 'Profile updated successfully!');
+    }
+  };
 
   if (isLoading || loading) {
     return <Loading />;
