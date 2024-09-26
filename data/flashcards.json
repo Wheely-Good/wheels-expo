@@ -1,0 +1,92 @@
+[
+  {
+    "id": "1",
+    "englishWord": "apple",
+    "japaneseWord": "りんご",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "englishWord": "dog",
+    "japaneseWord": "犬",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "englishWord": "book",
+    "japaneseWord": "本",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "englishWord": "cat",
+    "japaneseWord": "猫",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "englishWord": "water",
+    "japaneseWord": "水",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "6",
+    "englishWord": "food",
+    "japaneseWord": "食べ物",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "7",
+    "englishWord": "house",
+    "japaneseWord": "家",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "8",
+    "englishWord": "car",
+    "japaneseWord": "車",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "9",
+    "englishWord": "tree",
+    "japaneseWord": "木",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  },
+  {
+    "id": "10",
+    "englishWord": "friend",
+    "japaneseWord": "友達",
+    "interval": 1,
+    "repetition": 0,
+    "easiness": 2.5,
+    "nextReview": "2024-09-26T00:00:00.000Z"
+  }
+]

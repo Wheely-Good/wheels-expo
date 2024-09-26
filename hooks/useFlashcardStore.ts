@@ -1,7 +1,7 @@
-// store/useFlashcardStore.ts
 import { create } from 'zustand';
 import { superMemoV2, Card } from '@/lib/superMemov2';
-// Zustand store definition
+import flashcardsData from '@/data/flashcards.json';
+
 interface FlashcardState {
   cards: Card[];
   currentCardIndex: number;
@@ -12,36 +12,10 @@ interface FlashcardState {
 }
 
 export const useFlashcardStore = create<FlashcardState>((set, get) => ({
-  cards: [
-    // Hardcoded initial cards for testing (replace with your own data)
-    {
-      id: '1',
-      englishWord: 'apple',
-      japaneseWord: 'りんご',
-      interval: 1,  // Interval in minutes
-      repetition: 0,
-      easiness: 2.5,
-      nextReview: new Date(),
-    },
-    {
-      id: '2',
-      englishWord: 'dog',
-      japaneseWord: '犬',
-      interval: 1,
-      repetition: 0,
-      easiness: 2.5,
-      nextReview: new Date(),
-    },
-    {
-      id: '3',
-      englishWord: 'book',
-      japaneseWord: '本',
-      interval: 1,
-      repetition: 0,
-      easiness: 2.5,
-      nextReview: new Date(),
-    },
-  ],
+  cards: flashcardsData.map(card => ({
+    ...card,
+    nextReview: new Date(card.nextReview), // Convert to Date object
+  })) as Card[], // Cast to Card[] after conversion
   currentCardIndex: 0,
   dueCards: [],
 
@@ -68,4 +42,3 @@ export const useFlashcardStore = create<FlashcardState>((set, get) => ({
     get().getDueCards();
   },
 }));
-``
