@@ -6,7 +6,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/apple.mp3"
   },
   {
     "id": "2",
@@ -15,7 +16,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/dog.mp3"
   },
   {
     "id": "3",
@@ -24,7 +26,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/book.mp3"
   },
   {
     "id": "4",
@@ -33,7 +36,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/cat.mp3"
   },
   {
     "id": "5",
@@ -42,7 +46,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/water.mp3"
   },
   {
     "id": "6",
@@ -51,7 +56,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/food.mp3"
   },
   {
     "id": "7",
@@ -60,16 +66,18 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/house.mp3"
   },
   {
     "id": "8",
-    "englishWord": "car",
-    "japaneseWord": "車",
+    "englishWord": "woman",
+    "japaneseWord": "女の人",
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/woman.mp3"
   },
   {
     "id": "9",
@@ -78,7 +86,8 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/tree.mp3"
   },
   {
     "id": "10",
@@ -87,6 +96,7 @@
     "interval": 1,
     "repetition": 0,
     "easiness": 2.5,
-    "nextReview": "2024-09-26T00:00:00.000Z"
+    "nextReview": "2024-09-26T00:00:00.000Z",
+    "audioSource": "../assets/audio/friend.mp3"
   }
 ]

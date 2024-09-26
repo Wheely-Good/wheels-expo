@@ -1,4 +1,3 @@
-// utils/superMemoV2.ts
 export interface Card {
   id: string;
   englishWord: string;
@@ -7,6 +6,7 @@ export interface Card {
   repetition: number;
   easiness: number;
   nextReview: Date; // When the card should be reviewed next
+  audioSource: string;
 }
 
 export const superMemoV2 = (card: Card, grade: number): Card => {

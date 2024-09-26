@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Card } from '@/lib/superMemov2';
+import { Audio } from 'expo-av';
+import { Volume2 } from 'lucide-react-native';
 
 interface FlashcardProps {
   card: Card;
@@ -9,15 +11,39 @@ interface FlashcardProps {
 
 const Flashcard: React.FC<FlashcardProps> = ({ card, onGrade }) => {
   const [revealed, setRevealed] = useState(false);
+  const [sound, setSound] = useState<Audio.Sound | null>(null);
 
   useEffect(() => {
     setRevealed(false);
+    return () => {
+      // Cleanup sound on unmount
+      if (sound) {
+        sound.unloadAsync();
+      }
+    };
   }, [card]);
+
+  const playAudio = async (audioUrl: string) => {
+    // Stop any currently playing sound
+    if (sound) {
+      await sound.stopAsync();
+      sound.unloadAsync(); // Release the sound before creating a new one
+    }
+
+    const { sound: newSound } = await Audio.Sound.createAsync({ uri: audioUrl });
+    setSound(newSound);
+    await newSound.playAsync();
+  };
 
   return (
     <View className="flex-1 justify-center items-center p-4 bg-white">
       <View className="bg-blue-100 p-6 rounded-lg shadow-md w-full">
-        <Text className="text-3xl text-center font-bold text-gray-800">{card.englishWord}</Text>
+        <View className="flex flex-row items-center justify-between">
+          <Text className="text-3xl text-center font-bold text-gray-800">{card.englishWord}</Text>
+          <TouchableOpacity onPress={() => playAudio(card.audioSource)}>
+            <Volume2 className="h-5 w-5 text-gray" />
+          </TouchableOpacity>
+        </View>
         {revealed ? (
           <Text className="text-2xl mt-4 text-center text-gray-700">{card.japaneseWord}</Text>
         ) : (
