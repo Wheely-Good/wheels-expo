@@ -54,7 +54,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ card, onGrade }) => {
             className="bg-orange-500 px-4 py-2 rounded-full"
             onPress={() => onGrade(card, 2)}
           >
-            <Text className="text-white text-lg">Forgot</Text>
+            <Text className="text-white text-lg">Something</Text>
           </TouchableOpacity>
           <TouchableOpacity
             className="bg-red-500 px-4 py-2 rounded-full"
