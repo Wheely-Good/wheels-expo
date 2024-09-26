@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { View, Image, TouchableOpacity, Text, ActivityIndicator } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { useProfileStore } from '@/hooks/useProfileStore';
+import SuccessModal from './SuccessModal';
+import { User } from 'lucide-react-native';
+
 
 interface AvatarProps {
   url: string | null;
@@ -11,6 +14,9 @@ interface AvatarProps {
 
 export default function Avatar({ url, size = 150, onUpload }: AvatarProps) {
   const [uploading, setUploading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [newAvatarUri, setNewAvatarUri] = useState<string | null>(null); // Local URI shown only after successful upload
+
   const uploadAvatar = useProfileStore((state) => state.uploadAvatar);
 
   const pickImage = async () => {
@@ -33,6 +39,8 @@ export default function Avatar({ url, size = 150, onUpload }: AvatarProps) {
       const newAvatarUrl = await uploadAvatar(uri, currentAvatarUrl);
       if (newAvatarUrl) {
         onUpload(newAvatarUrl);
+        setNewAvatarUri(uri); // Set local URI only after successful upload
+        setShowModal(true); // Show the success modal after a successful upload
       }
     } catch (error) {
       console.error('Error uploading avatar:', error);
@@ -43,14 +51,14 @@ export default function Avatar({ url, size = 150, onUpload }: AvatarProps) {
 
   return (
     <View className="items-center">
-      {url ? (
+      {newAvatarUri || url ? (
         <Image
-          source={{ uri: url }}
+          source={{ uri: newAvatarUri || url || undefined }} // Display the new avatar only after successful upload
           style={{ width: size, height: size, borderRadius: size / 2 }}
         />
       ) : (
-        <View className={`w-[${size}px] h-[${size}px] rounded-full bg-gray-300 flex items-center justify-center`}>
-          <Text>No Image</Text>
+        <View className="w-[150px] h-[150px] rounded-full bg-gray-300 flex items-center justify-center">
+          <User className="w-[140px] h-[140px] text-gray-500"/>
         </View>
       )}
       <TouchableOpacity
@@ -64,6 +72,11 @@ export default function Avatar({ url, size = 150, onUpload }: AvatarProps) {
           <Text className="text-white text-center">Change Avatar</Text>
         )}
       </TouchableOpacity>
+      <SuccessModal
+        isVisible={showModal}
+        onClose={() => setShowModal(false)}
+        message="Avatar uploaded successfully!"
+      />
     </View>
   );
 }

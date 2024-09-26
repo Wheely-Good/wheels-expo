@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { useProfileStore } from '@/hooks/useProfileStore';
 import Loading from '@/components/Loading';
 import Avatar from '@/components/account_page/Avatar';
+import SuccessModal from '@/components/account_page/SuccessModal';
 
 export default function AccountPage() {
   const { session, isLoading, signOut } = useAuthStore((state) => ({
@@ -21,6 +22,7 @@ export default function AccountPage() {
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
   const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -29,7 +31,7 @@ export default function AccountPage() {
       if (profileData) {
         setUsername(profileData.username || '');
         setFullName(profileData.full_name || '');
-        setAvatarUrl(profileData.avatar_url);
+        setAvatarUrl(profileData.avatar_url || null);  // Default to null if invalid
       }
       setLoading(false);
     };
@@ -43,7 +45,7 @@ export default function AccountPage() {
     const currentProfile = await getProfile();
     if (currentProfile && (currentProfile.username !== username || currentProfile.full_name !== fullName)) {
       await updateProfile({ username, full_name: fullName });
-      Alert.alert('Success', 'Profile updated successfully!');
+      setShowModal(true);
     }
   };
 
@@ -86,6 +88,11 @@ export default function AccountPage() {
           </View>
         </View>
       </View>
+      <SuccessModal
+        isVisible={showModal}
+        onClose={() => setShowModal(false)}
+        message="Profile updated successfully!"
+      />
     </ScrollView>
   );
 }
