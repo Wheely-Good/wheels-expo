@@ -2,12 +2,6 @@ import { create } from 'zustand';
 import { supabase } from '@/lib/supabase';
 import { Session } from "@supabase/supabase-js";
 
-interface ProfileData {
-  username: string | null;
-  full_name: string | null;
-  avatar_url: string | null;
-}
-
 interface AuthState {
   session: Session | null;
   isLoading: boolean;
@@ -18,8 +12,7 @@ interface AuthState {
   signOut: () => Promise<void>;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
-
+export const useAuthStore = create<AuthState>((set) => ({
   session: null,
   isLoading: false,
   error: null,
@@ -77,5 +70,5 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       console.error('Error signing out:', error);
       set({ isLoading: false, error: (error as Error).message });
     }
-  }
+  },
 }));

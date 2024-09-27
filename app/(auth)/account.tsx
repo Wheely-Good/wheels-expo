@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
+import { useRouter } from 'expo-router';
 import { useAuthStore } from '@/hooks/useAuthStore';
 import { useProfileStore } from '@/hooks/useProfileStore';
 import Loading from '@/components/Loading';
@@ -7,6 +8,8 @@ import Avatar from '@/components/account_page/Avatar';
 import SuccessModal from '@/components/account_page/SuccessModal';
 
 export default function AccountPage() {
+  const router = useRouter();
+
   const { session, isLoading, signOut } = useAuthStore((state) => ({
     session: state.session,
     isLoading: state.isLoading,
@@ -17,6 +20,11 @@ export default function AccountPage() {
     updateProfile: state.updateProfile,
     getProfile: state.getProfile,
   }));
+
+  const handleSignOut = async () => {
+    await signOut();
+    router.replace('/sign-in');
+  };
 
   const [loading, setLoading] = useState(true);
   const [username, setUsername] = useState('');
@@ -82,7 +90,7 @@ export default function AccountPage() {
               <Text className="text-white text-center">Save Changes</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={signOut} className="rounded-md bg-red-500 px-4 py-2 mt-4">
+            <TouchableOpacity onPress={handleSignOut} className="rounded-md bg-red-500 px-4 py-2 mt-4">
               <Text className="text-white text-center">Sign Out</Text>
             </TouchableOpacity>
           </View>
