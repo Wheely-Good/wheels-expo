@@ -27,26 +27,24 @@ const StudySession: React.FC = () => {
         <Header />
       </View>
 
-      {/* Scrollable area below the header */}
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="flex-1">
-        <View className="flex-1 justify-center items-center">
-          {currentCard ? (
-            <Flashcard card={currentCard} gradeItem={handleGrade} />
-          ) : (
-            <View className="justify-center items-center">
-              <Text className="text-xl mb-4 text-center">
-                You have completed all of your due cards for now!
-              </Text>
-              <TouchableOpacity
-                onPress={() => router.push('./')}
-                className="bg-blue-500 rounded-lg px-4 py-2"
-              >
-                <Text className="text-white text-lg">Return to menu</Text>
-              </TouchableOpacity>
-            </View>
-          )}
-        </View>
-      </ScrollView>
+      {/* Main content area */}
+      <View className="flex-1 justify-center items-center">
+        {currentCard ? (
+          <Flashcard card={currentCard} gradeItem={handleGrade} />
+        ) : (
+          <View className="justify-center items-center">
+            <Text className="text-xl mb-4 text-center">
+              You have completed all of your due cards for now!
+            </Text>
+            <TouchableOpacity
+              onPress={() => router.push('./')}
+              className="bg-blue-500 rounded-lg px-4 py-2"
+            >
+              <Text className="text-white text-lg">Return to menu</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      </View>
     </SafeAreaView>
   );
 };
