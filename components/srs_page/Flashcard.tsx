@@ -21,4 +21,4 @@ export default function Flashcard ({ card, revealed }: FlashcardProps) {
       {revealed && <Text className="text-2xl mt-10 text-center text-gray-700">{card.japaneseWord}</Text>}
     </View>
   );
-};
+}
