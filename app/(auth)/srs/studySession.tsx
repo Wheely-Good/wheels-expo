@@ -31,7 +31,7 @@ const StudySession: React.FC = () => {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }} className="flex-1">
         <View className="flex-1 justify-center items-center">
           {currentCard ? (
-            <Flashcard card={currentCard} onGrade={handleGrade} />
+            <Flashcard card={currentCard} gradeItem={handleGrade} />
           ) : (
             <View className="justify-center items-center">
               <Text className="text-xl mb-4 text-center">
