@@ -13,7 +13,7 @@ import Animated, {
   interpolate,
   Extrapolate
 } from 'react-native-reanimated';
-import Flashcard from '@/components/srs_page/FlashCard';
+import Flashcard from '@/components/srs_page/Flashcard';
 
 export default function StudySession() {
   const router = useRouter();
