@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
 import { Card } from '@/lib/superMemov2';
 import { useFlashcardStore } from '@/hooks/useFlashcardStore';
 import { useRouter } from 'expo-router';
@@ -105,35 +105,38 @@ export default function StudySession() {
         <Header />
       </View>
 
-      <View className="flex-1 justify-center items-center">
-        <View className="flex-1 w-full justify-center items-center">
-          <View className="relative flex-grow w-full max-w-md min-h-96">
-            <Animated.View
-              style={[frontStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
-              className="flex-grow w-full p-6 items-center justify-center"
-            >
-              <Flashcard card={currentCard} revealed={false} />
-            </Animated.View>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 
-            <Animated.View
-              style={[backStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
-              className="flex-grow w-full p-6 items-center justify-center"
-            >
-              <Flashcard card={currentCard} revealed={true} />
-            </Animated.View>
-
-            {nextCard && (
+        <View className="flex-1 justify-center items-center">
+          <View className="flex-1 w-full justify-center items-center">
+            <View className="relative flex-grow w-full max-w-md min-h-96 overflow-hidden">
               <Animated.View
-                style={[nextCardStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
+                style={[frontStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
                 className="flex-grow w-full p-6 items-center justify-center"
               >
-                <Flashcard card={nextCard} revealed={false} />
+                <Flashcard card={currentCard} revealed={false} />
               </Animated.View>
-            )}
+
+              <Animated.View
+                style={[backStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
+                className="flex-grow w-full p-6 items-center justify-center"
+              >
+                <Flashcard card={currentCard} revealed={true} />
+              </Animated.View>
+
+              {nextCard && (
+                <Animated.View
+                  style={[nextCardStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
+                  className="flex-grow w-full p-6 items-center justify-center"
+                >
+                  <Flashcard card={nextCard} revealed={false} />
+                </Animated.View>
+              )}
+            </View>
+            <Footer card={currentCard} revealed={revealed} gradeItem={handleGrade} revealCard={revealCard} />
           </View>
-          <Footer card={currentCard} revealed={revealed} gradeItem={handleGrade} revealCard={revealCard} />
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
