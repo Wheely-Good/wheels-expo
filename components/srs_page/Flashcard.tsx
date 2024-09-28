@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { Card } from '@/lib/superMemov2';
 import { Volume2 } from 'lucide-react-native';
 import { Button } from '../ui/button';
+import Animated, { useSharedValue, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 
 interface FlashcardProps {
   card: Card;
@@ -13,26 +14,69 @@ const Flashcard: React.FC<FlashcardProps> = ({ card, gradeItem }) => {
   const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
+    // Reset the card to the front when a new card is loaded
     setRevealed(false);
+    flip.value = 0; // Instantly reset to the front side without animation
   }, [card]);
 
+  const flip = useSharedValue(0);
+
+  const frontStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ rotateY: `${flip.value * 180}deg` }],
+      backfaceVisibility: 'hidden', // Hide the back of the front card
+    };
+  });
+
+  const backStyle = useAnimatedStyle(() => {
+    return {
+      transform: [{ rotateY: `${(flip.value + 1) * 180}deg` }],
+      backfaceVisibility: 'hidden', // Hide the front of the back card
+    };
+  });
+
+  const handleFlip = () => {
+    flip.value = withTiming(flip.value === 0 ? 1 : 0, { duration: 500 });
+  };
+
   return (
-    <View className="flex h-full w-full justify-between items-center">
-      {/* Flashcard Content */}
-      <View className='flex-grow w-full p-6 items-center justify-center '>
-        <View className=" bg-blue-100 min-h-96 p-6 rounded-lg shadow-md max-w-md w-full">
-          <View className="flex mt-20 items-center relative">
-            <View className="flex-1">
-              <Text className="text-3xl font-bold text-gray-800 text-center">{card.englishWord}</Text>
+    <View className="flex h-full w-full justify-center items-center">
+      {/* Flashcard Container */}
+      <View className="relative flex-grow w-full max-w-md min-h-96">
+        {/* Front Side */}
+        <Animated.View
+          style={[frontStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
+          className="flex-grow w-full p-6 items-center justify-center"
+        >
+          <View className="bg-blue-100 min-h-96 p-6 rounded-lg shadow-md w-full">
+            <View className="flex mt-20 items-center relative">
+              <View className="flex-1">
+                <Text className="text-3xl font-bold text-gray-800 text-center">{card.englishWord}</Text>
+              </View>
+              <TouchableOpacity>
+                <Volume2 className="h-7 w-7 mt-4 text-gray-600" />
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity>
-              <Volume2 className="h-7 w-7 mt-4 text-gray-600" />
-            </TouchableOpacity>
           </View>
-          {revealed ? (
+        </Animated.View>
+
+        {/* Back Side */}
+        <Animated.View
+          style={[backStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
+          className="flex-grow w-full p-6 items-center justify-center"
+        >
+          <View className="bg-blue-100 min-h-96 p-6 rounded-lg shadow-md w-full">
+            <View className="flex mt-20 items-center relative">
+              <View className="flex-1">
+                <Text className="text-3xl font-bold text-gray-800 text-center">{card.englishWord}</Text>
+              </View>
+              <TouchableOpacity>
+                <Volume2 className="h-7 w-7 mt-4 text-gray-600" />
+              </TouchableOpacity>
+            </View>
             <Text className="text-2xl mt-10 text-center text-gray-700">{card.japaneseWord}</Text>
-          ) : null}
-        </View>
+          </View>
+        </Animated.View>
       </View>
 
       {/* Footer with Reveal or Grade buttons */}
@@ -80,7 +124,7 @@ const Flashcard: React.FC<FlashcardProps> = ({ card, gradeItem }) => {
           </View>
         ) : (
           <Button
-            onClick={() => setRevealed(true)}
+            onClick={() => {setRevealed(true); handleFlip();}}
             className='flex-1 border-2 px-4 py-2 mx-1'
           >
             <Text className="text-2xl text-white text-center">Reveal</Text>
