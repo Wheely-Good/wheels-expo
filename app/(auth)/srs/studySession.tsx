@@ -83,6 +83,10 @@ export default function StudySession() {
     });
   }, [isAnimating, slideAnimation, gradeCard, flip]);
 
+  const handleEndSession = () => {
+    router.push('./');
+  };
+
   if (!currentCard) {
     return (
       <SafeAreaView className="flex-1 justify-center items-center">
@@ -102,11 +106,10 @@ export default function StudySession() {
   return (
     <SafeAreaView className="flex-1">
       <View style={{ zIndex: 1, elevation: 5 }}>
-        <Header />
+        <Header onEndSession={handleEndSession} remainingCards={dueCards.length - currentCardIndex} />
       </View>
 
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-
         <View className="flex-1 justify-center items-center">
           <View className="flex-1 w-full justify-center items-center">
             <View className="relative flex-grow w-full min-h-96 overflow-hidden">
