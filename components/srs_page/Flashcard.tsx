@@ -9,7 +9,7 @@ interface FlashcardProps {
 
 export default function Flashcard ({ card, revealed }: FlashcardProps) {
   return (
-    <View className="bg-blue-100 min-h-96 p-6 rounded-lg shadow-md w-full">
+    <View className="bg-blue-100 min-h-96 p-6 rounded-lg shadow-md w-full max-w-md">
       <View className="flex mt-20 items-center relative">
         <View className="flex-1">
           <Text className="text-3xl font-bold text-gray-800 text-center">{card.englishWord}</Text>

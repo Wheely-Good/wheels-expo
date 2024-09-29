@@ -11,7 +11,7 @@ import Animated, {
   withTiming,
   runOnJS,
   interpolate,
-  Extrapolate
+  Extrapolation
 } from 'react-native-reanimated';
 import Flashcard from '@/components/srs_page/Flashcard';
 
@@ -41,26 +41,26 @@ export default function StudySession() {
   const frontStyle = useAnimatedStyle(() => ({
     transform: [
       { rotateY: `${flip.value * 180}deg` },
-      { translateX: interpolate(slideAnimation.value, [0, 1], [0, -400], Extrapolate.CLAMP) },
+      { translateX: interpolate(slideAnimation.value, [0, 1], [0, -400], Extrapolation.CLAMP) },
     ],
-    opacity: interpolate(slideAnimation.value, [0, 1], [1, 0], Extrapolate.CLAMP),
+    opacity: interpolate(slideAnimation.value, [0, 1], [1, 0], Extrapolation.CLAMP),
     backfaceVisibility: 'hidden',
   }));
 
   const backStyle = useAnimatedStyle(() => ({
     transform: [
       { rotateY: `${(flip.value + 1) * 180}deg` },
-      { translateX: interpolate(slideAnimation.value, [0, 1], [0, -400], Extrapolate.CLAMP) },
+      { translateX: interpolate(slideAnimation.value, [0, 1], [0, -400], Extrapolation.CLAMP) },
     ],
-    opacity: interpolate(slideAnimation.value, [0, 1], [1, 0], Extrapolate.CLAMP),
+    opacity: interpolate(slideAnimation.value, [0, 1], [1, 0], Extrapolation.CLAMP),
     backfaceVisibility: 'hidden',
   }));
 
   const nextCardStyle = useAnimatedStyle(() => ({
     transform: [
-      { translateX: interpolate(slideAnimation.value, [0, 1], [400, 0], Extrapolate.CLAMP) },
+      { translateX: interpolate(slideAnimation.value, [0, 1], [400, 0], Extrapolation.CLAMP) },
     ],
-    opacity: interpolate(slideAnimation.value, [0, 1], [0, 1], Extrapolate.CLAMP),
+    opacity: interpolate(slideAnimation.value, [0, 1], [0, 1], Extrapolation.CLAMP),
   }));
 
   const revealCard = useCallback(() => {
@@ -109,7 +109,7 @@ export default function StudySession() {
 
         <View className="flex-1 justify-center items-center">
           <View className="flex-1 w-full justify-center items-center">
-            <View className="relative flex-grow w-full max-w-md min-h-96 overflow-hidden">
+            <View className="relative flex-grow w-full min-h-96 overflow-hidden">
               <Animated.View
                 style={[frontStyle, { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }]}
                 className="flex-grow w-full p-6 items-center justify-center"
