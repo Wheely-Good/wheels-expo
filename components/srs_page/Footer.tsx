@@ -25,7 +25,7 @@ export default function Footer({ card, revealed, gradeItem, revealCard }: Footer
   const gradeButtons = [
     // { grade: 1, text: 'No clue', color: 'red' },
     // { grade: 2, text: 'Something', color: 'orange' },
-    { grade: 3, text: 'Hard', color: 'yellow' },
+    { grade: 1, text: 'Hard', color: 'yellow' },
     { grade: 4, text: 'Good', color: 'blue' },
     { grade: 5, text: 'Easy', color: 'green' },
   ];

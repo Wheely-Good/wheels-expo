@@ -7,11 +7,16 @@ export interface Card {
   easiness: number;
   nextReview: Date; // When the card should be reviewed next
   audioSource: string;
+  new: boolean;
 }
 
 export const superMemoV2 = (card: Card, grade: number): Card => {
   const now = new Date();
   let { interval, repetition, easiness } = card;
+
+  if (card.new) {
+    card.new = false;
+  }
 
   // If grade is less than 3, reset repetition and interval
   if (grade < 3) {

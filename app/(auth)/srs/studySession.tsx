@@ -17,14 +17,14 @@ import Flashcard from '@/components/srs_page/Flashcard';
 
 export default function StudySession() {
   const router = useRouter();
-  const { dueCards, currentCardIndex, gradeCard } = useFlashcardStore((state) => ({
-    dueCards: state.dueCards,
+  const { sessionCards, currentCardIndex, gradeCard, startStudySession, isSessionComplete, remainingCards } = useFlashcardStore((state) => ({
+    sessionCards: state.sessionCards,
     currentCardIndex: state.currentCardIndex,
     gradeCard: state.gradeCard,
+    startStudySession: state.startStudySession,
+    isSessionComplete: state.isSessionComplete,
+    remainingCards: state.sessionCards.length,
   }));
-
-  const currentCard = dueCards[currentCardIndex] || null;
-  const nextCard = dueCards[currentCardIndex + 1] || null;
 
   const [revealed, setRevealed] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -33,10 +33,19 @@ export default function StudySession() {
   const slideAnimation = useSharedValue(0);
 
   useEffect(() => {
-    setRevealed(false);
-    flip.value = 0;
-    slideAnimation.value = 0;
-  }, [currentCardIndex]);
+    startStudySession();
+  }, []);
+
+  // useEffect(() => {
+  //   setRevealed(false);
+  //   flip.value = 0;
+  //   slideAnimation.value = 0;
+  //   console.log('currentCardIndex', currentCardIndex);
+  //   console.log('sessionCards', sessionCards);
+  // }, [currentCardIndex]);
+
+  const currentCard = sessionCards[currentCardIndex] || null;
+  const nextCard = sessionCards[currentCardIndex + 1] || null;
 
   const frontStyle = useAnimatedStyle(() => ({
     transform: [
@@ -87,11 +96,11 @@ export default function StudySession() {
     router.push('./');
   };
 
-  if (!currentCard) {
+  if (isSessionComplete()) {
     return (
       <SafeAreaView className="flex-1 justify-center items-center">
         <Text className="text-xl mb-4 text-center">
-          You have completed all of your due cards for now!
+          You have completed all of your cards for this session!
         </Text>
         <TouchableOpacity
           onPress={() => router.push('./')}
@@ -103,10 +112,18 @@ export default function StudySession() {
     );
   }
 
+  if (sessionCards.length === 0) {
+    return (
+      <SafeAreaView className="flex-1 justify-center items-center">
+        <Text className="text-xl mb-4 text-center">Loading...</Text>
+      </SafeAreaView>
+    );
+  }
+
   return (
     <SafeAreaView className="flex-1">
       <View style={{ zIndex: 1, elevation: 5 }}>
-        <Header onEndSession={handleEndSession} remainingCards={dueCards.length - currentCardIndex} />
+        <Header onEndSession={handleEndSession} remainingCards={remainingCards} />
       </View>
 
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
