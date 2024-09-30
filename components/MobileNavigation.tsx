@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Link } from 'expo-router';
-import { Book, TestTube2, User, Dumbbell, Bike } from 'lucide-react-native';
+import { Book, TestTube2, User, Dumbbell, Bike, Zap } from 'lucide-react-native';
 
 export default function MobileNavigation() {
   return (
@@ -18,6 +18,9 @@ export default function MobileNavigation() {
         </Link>
         <Link href="/training" >
           <Dumbbell color="white" />
+        </Link>
+        <Link href="/srs" >
+          <Zap color="white" />
         </Link>
         <Link href="/account" >
           <User color="white" />
